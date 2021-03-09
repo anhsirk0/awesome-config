@@ -1,3 +1,14 @@
 # my dotfiles for awesome window manager
 
 ## modified from awesome-copycats
+
+## Minimal theme
+![minimal](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/minimal1.png)
+
+![minimal](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/minimal1.png)
+
+## Boxes theme
+![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes1.png)
+
+![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes1.png)
+
