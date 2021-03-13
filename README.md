@@ -12,3 +12,9 @@
 
 ![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes2.png)
 
+
+## Gruv theme
+![gruv](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/gruv1.png)
+
+![gruv](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/gruv2.png)
+
