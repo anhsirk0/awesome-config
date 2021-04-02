@@ -2,6 +2,11 @@
 
 ## modified from awesome-copycats
 
+## Warm theme
+![warm](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/warm1.png)
+
+![warm](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/warm2.png)
+
 ## Minimal theme
 ![minimal](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/minimal1.png)
 
