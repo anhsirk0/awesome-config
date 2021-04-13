@@ -1,3 +1,11 @@
+
+--  ██████╗ ██████╗ ██╗   ██╗██╗   ██╗██████╗  ██████╗ ██╗  ██╗
+-- ██╔════╝ ██╔══██╗██║   ██║██║   ██║██╔══██╗██╔═══██╗╚██╗██╔╝
+-- ██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝██║   ██║ ╚███╔╝ 
+-- ██║   ██║██╔══██╗██║   ██║╚██╗ ██╔╝██╔══██╗██║   ██║ ██╔██╗ 
+-- ╚██████╔╝██║  ██║╚██████╔╝ ╚████╔╝ ██████╔╝╚██████╔╝██╔╝ ██╗
+--  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝   ╚═══╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
@@ -38,8 +46,10 @@ theme.bg_focus                                  = theme.dark
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_urgent                                 = "#2A1F1E"
 theme.border_width                              = dpi(1)
-theme.border_normal                             = "#323232"
-theme.border_focus                              = theme.accent
+-- theme.border_normal                             = "#404040"
+theme.border_normal                             = theme.dark
+-- theme.border_focus                              = "#fe8019"
+theme.border_focus                              = theme.yellow_bright
 
 theme.taglist_fg_focus                          = theme.yellow_bright
 theme.taglist_bg_focus                          = theme.dark
@@ -71,20 +81,18 @@ theme.layout_magnifier                          = theme.dir .. "/icons/magnifier
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(0)
+theme.useless_gap                               = dpi(3)
 
 theme.widget_net                                = theme.dir .. "/icons/net.png"
 theme.battery_full                              = theme.dir .. "/icons/battery_blue.png"
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7"}
--- awful.util.tagnames   = { "a", "w", "e", "s", "o", "m", "e"}
--- awful.util.tagnames   = { "A", "W", "E", "S", "O", "M", "E"}
+-- awful.util.tagnames   = { "ℂ", "ℝ", "ℚ", "ℤ", "ℕ"}
 
 local markup     = lain.util.markup
 local separators = lain.util.separators
 local gray       = "#9E9C9A"
-local arrow = separators.arrow_left
 
 -- local mytextwidget = wibox.widget{
 --     markup = 'This is a textbox',
@@ -121,10 +129,14 @@ local clock = awful.widget.watch(
 local bat_icon = wibox.widget.imagebox(theme.battery_full)
 local bat = lain.widget.bat({
     settings = function()
-        bat_header = ""
-        -- bat_header = ""
-        bat_p      = bat_now.perc .. " "
-        widget:set_markup(markup.font(theme.font, markup(theme.blue_bright, bat_header .. bat_p)))
+        if bat_now.ac_status == 1 then
+            bat_header = " ↑ "
+            -- bat_header = " "
+        else
+            bat_header = " "
+        end
+        bat_p      = bat_now.perc .. ""
+        widget:set_markup(markup.font(theme.font, markup(theme.blue_bright, bat_p .. bat_header)))
     end
 })
 
