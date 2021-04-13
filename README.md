@@ -2,6 +2,11 @@
 
 ## modified from awesome-copycats
 
+## Pastel theme
+![pastel](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/pastel1.png)
+
+![pastel](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/pastel2.png)
+
 ## Warm theme
 ![warm](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/warm1.png)
 
