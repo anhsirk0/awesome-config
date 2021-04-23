@@ -8,7 +8,7 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/red"
+theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/red-line"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "NotoSansMono Nerd Font 10"
 theme.taglist_font                              = "Icons 10"

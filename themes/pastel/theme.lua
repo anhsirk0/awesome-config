@@ -16,7 +16,7 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/warm"
+theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/pastel"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Source Code Pro 9"
 theme.taglist_font                              = "Source Code Pro 9"
