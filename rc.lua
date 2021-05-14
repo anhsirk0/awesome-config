@@ -22,16 +22,17 @@ globalkeys = require("myshortcuts")
 local themes = {
     "gruv",          -- 1
     "red",           -- 2
-    "green",         -- 3
+    "leaf",         -- 3
     "ocean",         -- 4
     "pink",          -- 5
     "square",        -- 6
     "one-dark",      -- 7
     "warm",          -- 8
     "pastel",        -- 9
+    "two-dark",      -- 10
 }
 
-local chosen_theme = themes[9]
+local chosen_theme = themes[7]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
@@ -47,8 +48,8 @@ awful.layout.layouts = {
     awful.layout.suit.tile,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.tile.left,
-    -- awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
     -- awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
@@ -237,10 +238,7 @@ awful.rules.rules = {
     -- lichess
     { rule = { instance = "crx_pdihgkikjgccndbckbcgjmcnpkockcjg" },
     properties = { floating = false } ,
-    callback = function ()
-    			awful.tag.incmwfact( 0.10)
-   			end
-	},
+    },
 
 }
 -- }}}
