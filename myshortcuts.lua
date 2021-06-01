@@ -3,19 +3,24 @@ local gears         = require("gears")
 local awful         = require("awful")
 
 local menubar       = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
+-- local hotkeys_popup = require("awful.hotkeys_popup")
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "kitty"
+local terminal     = "alacritty"
 local editor       = "micro"
 local gui_editor   = "mousepad"
 local browser      = "brave"
 local home         = "/home/krishna/"
 
+menubar.show_categories = false
+
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "/",      hotkeys_popup.show_help,
-              {description="show help", group="awesome"}),
+    -- awful.key({ modkey,           }, "/",      hotkeys_popup.show_help,
+    --           {description="show help", group="awesome"}),
+
+    -- awful.key({ modkey,           }, "/",  awful.spawn("/usr/lib/brave-bin/brave --profile-directory=Default --app-id=pdihgkikjgccndbckbcgjmcnpkockcjg"),
+    --           {description="show help", group="awesome"}),
 
     awful.key({ modkey,           }, "Left",
         function()
@@ -160,7 +165,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey,    }, "o", function () awful.spawn(home .. ".config/rofi/other/launcher.sh") end,
               {description = "search and add a song to playlist ", group = "lollypop"}),
 
-    awful.key({ modkey,     }, "d", function () awful.spawn(home .. ".config/rofi/applaunch/launcher.sh") end,
+    awful.key({ modkey,     }, "p", function () awful.spawn(home .. ".config/rofi/applaunch/launcher.sh") end,
               {description = "launch rofi", group = "launcher"}),
 
     awful.key({ modkey,    }, "a", function () awful.spawn(home .. ".config/rofi/helper/light_launcher.sh") end,
@@ -226,7 +231,7 @@ local globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "d", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -276,6 +281,15 @@ clientkeys = gears.table.join(
         end ,
         {description = "(un)maximize horizontally", group = "client"})
 )
+
+
+clientbuttons = gears.table.join(
+    awful.button({ }, 1, function (c) client.focus = c; c:raise()
+                 mymainmenu:hide() end),
+    awful.button({ modkey }, 1, awful.mouse.client.move),
+    awful.button({ altkey }, 1, awful.mouse.client.resize)
+    )
+
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.

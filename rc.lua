@@ -16,7 +16,7 @@ local dpi           = require("beautiful.xresources").apply_dpi
 -- }}}
 
 globalkeys = require("myshortcuts")
-
+awful.rules.rules = require("myrules")
 -- {{{ Variable definitions
 
 local themes = {
@@ -32,12 +32,12 @@ local themes = {
     "two-dark",      -- 10
 }
 
-local chosen_theme = themes[7]
+local chosen_theme = themes[9]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true -- cycle trough all previous client or just the first -- https://github.com/lcpz/awesome-copycats/issues/274
-local editor       = os.getenv("EDITOR") or "micro"
+local editor       = os.getenv("EDITOR") or "kak"
 local gui_editor   = os.getenv("GUI_EDITOR") or "mousepad"
 local browser      = os.getenv("BROWSER") or "brave"
 
@@ -86,7 +86,7 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 browser = "exo-open --launch WebBrowser" or "brave"
 filemanager = "nemo"
 gui_editor = "mousepad"
-terminal = "kitty"
+terminal = "alacritty"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -162,85 +162,8 @@ red         = "#EB8F8F"
 
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
 
-
-clientbuttons = gears.table.join(
-    awful.button({ }, 1, function (c) client.focus = c; c:raise()
-                 mymainmenu:hide() end),
-    awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ altkey }, 1, awful.mouse.client.resize))
-
 -- Set keys
 root.keys(globalkeys)
--- }}}
-
--- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons,
-                     size_hints_honor = false, -- Remove gaps between terminals
-                     screen = awful.screen.preferred,
-                     callback = awful.client.setslave,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
-    },
-
-    -- Floating clients.
-    { rule_any = {
-        instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-        },
-        class = {
-          "Arandr",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Wpa_gui",
-          "pinentry",
-          "veromix",
-          "xtightvncviewer"},
-
-        name = {
-          "Event Tester",  -- xev.
-        },
-        role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-        }
-      }, properties = { floating = true }},
-
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" } },
-      properties = { titlebars_enabled = true }
-    },
-	
-    -- Set Lollypop to always map on the tag named "3" on screen 1.
-    { rule = { class = "Lollypop" },
-    properties = { screen = 1, tag = "3" } ,
-    callback = function ()
-                 local screen = awful.screen.focused()
-                 local tag = screen.tags[3]
-                 if tag then
-                    tag:view_only()
-                 end
-           end
-    },
-
-    -- fix brave apps (lichess) floating mode
-    -- lichess
-    { rule = { instance = "crx_pdihgkikjgccndbckbcgjmcnpkockcjg" },
-    properties = { floating = false } ,
-    },
-
-}
 -- }}}
 
 -- {{{ Signals
