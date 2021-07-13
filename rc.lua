@@ -22,7 +22,7 @@ awful.rules.rules = require("myrules")
 local themes = {
     "gruv",          -- 1
     "red",           -- 2
-    "leaf",         -- 3
+    "leaf",          -- 3
     "ocean",         -- 4
     "pink",          -- 5
     "square",        -- 6
@@ -32,7 +32,7 @@ local themes = {
     "two-dark",      -- 10
 }
 
-local chosen_theme = themes[9]
+local chosen_theme = themes[1]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
@@ -108,54 +108,6 @@ local function client_menu_toggle_fn()
 end
 -- }}}
 
--- local myawesomemenu = {
---     { "hotkeys", function() return false, hotkeys_popup.show_help end },
---     { "manual", terminal .. " -e man awesome" },
---     { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
---     { "restart", awesome.restart },
---     { "quit", function() awesome.quit() end }
--- }
--- awful.util.mymainmenu = freedesktop.menu.build({
---     icon_size = beautiful.menu_height or dpi(16),
---     before = {
---         { "Awesome", myawesomemenu, beautiful.awesome_icon },
---         -- other triads can be put here
---     },
---     after = {
---         { "Open terminal", terminal },
---         -- other triads can be put here
---     }
--- })
-
--- myexitmenu = {
---     { "log out", function() awesome.quit() end, menubar.utils.lookup_icon("system-log-out") },
---     { "suspend", "systemctl suspend", menubar.utils.lookup_icon("system-suspend") },
---     { "hibernate", "systemctl hibernate", menubar.utils.lookup_icon("system-suspend-hibernate") },
---     { "reboot", "systemctl reboot", menubar.utils.lookup_icon("system-reboot") },
---     { "shutdown", "poweroff", menubar.utils.lookup_icon("system-shutdown") }
--- }
-
--- mymainmenu = freedesktop.menu.build({
---     icon_size = 32,
---     before = {
---         { "Terminal", terminal, menubar.utils.lookup_icon("utilities-terminal") },
---         { "Browser", browser, menubar.utils.lookup_icon("internet-web-browser") },
---         { "Files", filemanager, menubar.utils.lookup_icon("system-file-manager") },
---         -- other triads can be put here
---     },
---     after = {
---         { "Awesome", myawesomemenu, "/usr/share/awesome/icons/awesome32.png" },
---         { "Exit", myexitmenu, menubar.utils.lookup_icon("system-shutdown") },
---         -- other triads can be put here
---     }
--- })
--- -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
---                                      -- menu = mymainmenu })
--- -- Menubar configuration
--- menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- -- }}}
--- -- mykeyboardlayout = awful.widget.keyboardlayout()
-
 darkblue    = beautiful.bg_focus
 blue        = "#9EBABA"
 red         = "#EB8F8F"
@@ -167,8 +119,6 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Signals
-
-
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
@@ -258,4 +208,4 @@ beautiful.gap_single_client = false
 --end)
 
 awful.spawn("/home/krishna/.config/awesome/autorun.sh")
---local useless_gap = tag.getgap(tag.selected(screen), #client.tiled(s))
+
