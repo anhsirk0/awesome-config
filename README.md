@@ -2,6 +2,9 @@
 
 ## modified from awesome-copycats
 
+## Aqua theme
+![aqua](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/aqua.png)
+
 ## Pastel theme
 ![pastel](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/pastel1.png)
 
