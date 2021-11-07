@@ -21,18 +21,17 @@ awful.rules.rules = require("myrules")
 
 local themes = {
     "gruv",          -- 1
-    "red",           -- 2
-    "leaf",          -- 3
+    "wombat",        -- 2
+    "aqua",        -- 3
     "ocean",         -- 4
     "pink",          -- 5
     "square",        -- 6
     "one-dark",      -- 7
     "warm",          -- 8
     "pastel",        -- 9
-    "two-dark",      -- 10
 }
 
-local chosen_theme = themes[1]
+local chosen_theme = themes[3]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
