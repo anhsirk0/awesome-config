@@ -8,9 +8,9 @@ function run {
 }
 
 ## run (only once) processes which spawn with different name
-if (command -v gnome-keyring-daemon && ! pgrep gnome-keyring-d); then
-    gnome-keyring-daemon --daemonize --login &
-fi
+# if (command -v gnome-keyring-daemon && ! pgrep gnome-keyring-d); then
+#     gnome-keyring-daemon --daemonize --login &
+# fi
 if (command -v start-pulseaudio-x11 && ! pgrep pulseaudio); then
     start-pulseaudio-x11 &
 fi
@@ -21,25 +21,11 @@ if (command -v  xfce4-power-manager && ! pgrep xfce4-power-man) ; then
     xfce4-power-manager &
 fi
 
-run xfsettingsd
 run nm-applet
+run picom --config ~/.config/compton.conf
+xmodmap ~/.swap_ctrl_alt
+xrdb -merge ~/.Xresources
+run numlockx on
 run light-locker
-run xcape -e 'Super_L=Super_L|Control_L|Escape'
-# run thunar --daemon
-# run pa-applet
-# run pamac-tray
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Coordinate Transformation Matrix' 2.2 0 0 0 2.2 0 0 0 1
 
-## The following are not included in minimal edition by default
-## but autorun.sh will pick them up if you install them
-
-# if (command -v system-config-printer-applet && ! pgrep applet.py ); then
-#   system-config-printer-applet &
-# fi
-
-# run compton --config ~/.config/picom/picom.conf
-run compton --shadow-exclude '!focused'
-# run blueman-applet
-# run msm_notifier
-nitrogen --restore
-numlockx on
-# run /usr/lib/geoclue-2.0/demos/agent
