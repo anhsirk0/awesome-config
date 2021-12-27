@@ -12,12 +12,16 @@ local ctrlkey = "Mod1"
 
 local home = "/home/krishna/"
 local terminal = "alacritty"
+-- local terminal = "kitty"
 local editor = "micro"
 local gui_editor = "mousepad"
+
 -- local browser = home .. ".local/bin/waterfox/waterfox"
+-- local private_browser = browser .. " --private-window"
 local browser = "brave"
 local private_browser = browser .. " --incognito"
-local browser_name = browser
+local browser_name = "brave"
+
 local telegram = home .. ".local/bin/telegram"
 local rofi_dir = home .. ".config/rofi/"
 local scripts_dir = home .. ".config/myshell/scripts/"
@@ -53,8 +57,8 @@ local globalkeys = gears.table.join(
     end,
     {description = "view previous", group = "client"}),
 
-    awful.key({ modkey, }, "Escape", awful.tag.history.restore,
-    {description = "go back", group = "tag"}),
+    -- awful.key({ modkey, }, "Escape", awful.tag.history.restore,
+    -- {description = "go back", group = "tag"}),
 
     awful.key({ modkey, }, "j",
     function ()
@@ -118,7 +122,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey, }, "z", awful.tag.viewprev,
+    awful.key({ modkey, }, "z", awful.tag.history.restore,
     {description = "View previous tag", group = "tag"}),
 
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
@@ -127,7 +131,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
     {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey, }, "l", function () awful.tag.incmwfact( 0.03) end,
+    awful.key({ modkey, }, "l", function () awful.tag.incmwfact( 0.03 ) end,
     {description = "increase master width factor", group = "layout"}),
 
     awful.key({ modkey, }, "h", function () awful.tag.incmwfact(-0.03) end,

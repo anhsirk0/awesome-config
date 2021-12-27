@@ -18,12 +18,13 @@ local wallpaper_dir = "/mnt/extras/Wallpapers"
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/aqua"
-theme.wallpaper                                 = wallpaper_dir .. "/h_dark.png"
-theme.font                                      = "JetBrains Mono Bold 9"
+theme.wallpaper                                 = wallpaper_dir .. "/eos_astronaut.png"
+
+theme.font                                      = "Fira Code Retina 9"
 -- theme.taglist_font                              = "NotoSansMono Nerd Font 9"
-theme.notification_font                         = "JetBrains Mono Bold 19"
+theme.notification_font                         = "Fira Code Retina 19"
 theme.notification_max_width                    = 400
-theme.taglist_font                              = "JetBrains Mono Bold 9"
+theme.taglist_font                              = "Fira Code Retina 9"
 
 theme.accent                                    = "#e3f7a1"
 theme.white                                     = "#dcdbd7"
@@ -53,7 +54,6 @@ theme.border_width                              = dpi(1)
 theme.border_normal                             = theme.dark
 theme.border_focus                              = theme.purple
 
-
 theme.bg1                                       = "#3d4059"
 theme.bg2                                       = "#313449"
 theme.bg3                                       = "#2c2e3e"
@@ -61,7 +61,7 @@ theme.bg4                                       = "#20202a"
 
 theme.taglist_fg_focus                          = theme.pink
 theme.taglist_bg_focus                          = theme.bg3
-theme.taglist_fg_occupied                       = theme.purple1
+theme.taglist_fg_occupied                       = theme.purple
 theme.taglist_fg_empty                          = theme.grey
 theme.taglist_fg_urgent                         = theme.red
 theme.taglist_spacing                           = 2
@@ -89,7 +89,7 @@ theme.layout_magnifier                          = theme.dir .. "/icons/magnifier
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(3)
+theme.useless_gap                               = dpi(2)
 
 theme.widget_net                                = theme.dir .. "/icons/net.png"
 theme.battery_full                              = theme.dir .. "/icons/battery_blue.png"
@@ -127,7 +127,7 @@ theme.cal = lain.widget.cal({
 local clock = awful.widget.watch(
     "date +' %d %b %a %I:%M '", 10,
     function(widget, stdout)
-        widget:set_markup(" " .. markup.font(theme.font, markup(theme.yellow, stdout)))
+        widget:set_markup("  " .. markup.font(theme.font, markup(theme.yellow, stdout)))
     end
 )
 
@@ -240,9 +240,8 @@ function theme.at_screen_connect(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
-
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = dpi(18), bg = barcolor, border_width = dpi(0) })
+    s.mywibox = awful.wibar({ position = "bottom", screen = s, height = dpi(18), bg = barcolor, border_width = 0 })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -258,9 +257,9 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.container.background(wibox.widget.systray(), theme.bg4),
             wibox.container.background(mysep(theme.bg3, right_tri), theme.bg4),
-            wibox.container.background(wibox.container.margin(theme.volume.widget, dpi(6), dpi(6)), theme.bg3),
+            wibox.container.background(wibox.container.margin(theme.volume.widget, dpi(2), dpi(4)), theme.bg3),
             wibox.container.background(mysep(theme.bg2, right_tri), theme.bg3),
-            wibox.container.background(wibox.container.margin(wibox.widget { bat_icon, bat, layout = wibox.layout.align.horizontal }, dpi(6), dpi(6)), theme.bg2),
+            wibox.container.background(wibox.container.margin(wibox.widget { bat_icon, bat, layout = wibox.layout.align.horizontal }, dpi(2), dpi(4)), theme.bg2),
             wibox.container.background(mysep(theme.bg1, right_tri), theme.bg2),
             wibox.container.background(clock, theme.bg1),
         },

@@ -23,9 +23,10 @@ fi
 
 run nm-applet
 run picom --config ~/.config/compton.conf
-xmodmap ~/.swap_ctrl_alt
+xmodmap ~/.config/awesome/swap_ctrl_alt
 xrdb -merge ~/.Xresources
 run numlockx on
 run light-locker
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Coordinate Transformation Matrix' 2.2 0 0 0 2.2 0 0 0 1
+# run emacs --daemon &
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Coordinate Transformation Matrix' 2.1 0 0 0 2.1 0 0 0 1
 

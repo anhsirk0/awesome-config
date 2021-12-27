@@ -22,8 +22,8 @@ awful.rules.rules = require("myrules")
 local themes = {
     "gruv",          -- 1
     "wombat",        -- 2
-    "aqua",        -- 3
-    "ocean",         -- 4
+    "aqua",          -- 3
+    "tomorrow",      -- 4
     "pink",          -- 5
     "square",        -- 6
     "one-dark",      -- 7
@@ -31,7 +31,7 @@ local themes = {
     "pastel",        -- 9
 }
 
-local chosen_theme = themes[3]
+local chosen_theme = themes[7]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
@@ -44,14 +44,14 @@ awful.util.terminal = terminal
 -- awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
      -- awful.layout.suit.floating,
-    awful.layout.suit.tile,
     -- awful.layout.suit.spiral.dwindle,
-    -- awful.layout.suit.tile.left,
+    awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.spiral,
     -- awful.layout.suit.tile.top,
     -- awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
-    -- awful.layout.suit.spiral,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,

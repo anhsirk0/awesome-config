@@ -25,50 +25,51 @@ myrules = {
     "DTA", -- Firefox addon DownThemAll.
     "copyq", -- Includes session name in class.
   },
-  class = {
-    "Arandr",
-    "Gpick",
-    "Kruler",
-    "MessageWin", -- kalarm.
-    "Sxiv",
-    "Wpa_gui",
-    "pinentry",
-    "veromix",
-    "xtightvncviewer"
-  },
+      class = {
+        "Arandr",
+        "Gpick",
+        "Kruler",
+        "MessageWin", -- kalarm.
+        "Sxiv",
+        "Wpa_gui",
+        "pinentry",
+        "veromix",
+        "xtightvncviewer"
+      },
 
-  name = {
-    "Event Tester", -- xev.
-  },
-  role = {
-    "AlarmWindow", -- Thunderbird's calendar.
-    "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
-  }
-}, properties = { floating = true }},
+      name = {
+        "Event Tester", -- xev.
+      },
+      role = {
+        "AlarmWindow", -- Thunderbird's calendar.
+        "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+      }
+    }, properties = { floating = true }},
 
--- Add titlebars to normal clients and dialogs
-{ rule_any = {type = { "normal", "dialog" } },
-  properties = { titlebars_enabled = true }
-},
+    -- Add titlebars to normal clients and dialogs
+    { rule_any = {type = { "normal", "dialog" } },
+      properties = { titlebars_enabled = true }
+    },
 
--- Set Lollypop to always map on the tag named "3" on screen 1.
-{ rule = { class = "Lollypop" },
-  properties = { screen = 1, tag = "3" },
-  callback = function ()
-    local screen = awful.screen.focused()
-    local tag = screen.tags[3]
-    if tag then
-      tag:view_only()
-    end
-  end
-},
+    -- Set Lollypop to always map on the tag named "3" on screen 1.
+    { rule = { class = "Lollypop" },
+      properties = { screen = 1, tag = "3" },
+      callback = function ()
+        local screen = awful.screen.focused()
+        local tag = screen.tags[3]
+        if tag then
+          tag:view_only()
+        end
+      end
+    },
 
--- fix brave apps (lichess) floating mode
--- lichess
-{ rule = { instance = "crx_pdihgkikjgccndbckbcgjmcnpkockcjg" },
-  properties = { floating = false },
-},
+    -- fix brave apps (lichess) floating mode
+    -- lichess
+    { rule = { instance = "crx_pdihgkikjgccndbckbcgjmcnpkockcjg" },
+      properties = { floating = false },
+    },
 
 }
 -- }}}
+
 return myrules
