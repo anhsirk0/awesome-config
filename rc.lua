@@ -24,26 +24,25 @@ local themes = {
     "wombat",        -- 2
     "aqua",          -- 3
     "tomorrow",      -- 4
-    "pink",          -- 5
-    "square",        -- 6
+    "moonlight",     -- 5
+    "tokyo-night",   -- 6
     "one-dark",      -- 7
     "warm",          -- 8
     "pastel",        -- 9
 }
 
-local chosen_theme = themes[7]
+local chosen_theme = themes[5]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true -- cycle trough all previous client or just the first -- https://github.com/lcpz/awesome-copycats/issues/274
 local editor       = os.getenv("EDITOR") or "kak"
-local gui_editor   = os.getenv("GUI_EDITOR") or "mousepad"
 local browser      = os.getenv("BROWSER") or "brave"
 
 awful.util.terminal = terminal
 -- awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
-     -- awful.layout.suit.floating,
+    -- awful.layout.suit.floating,
     -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
@@ -82,9 +81,6 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 -- }}}
 
 -- This is used later as the default terminal and editor to run.
-browser = "exo-open --launch WebBrowser" or "brave"
-filemanager = "nemo"
-gui_editor = "mousepad"
 terminal = "alacritty"
 
 -- Default modkey.

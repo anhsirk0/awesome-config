@@ -21,12 +21,11 @@ if (command -v  xfce4-power-manager && ! pgrep xfce4-power-man) ; then
     xfce4-power-manager &
 fi
 
+run nitrogen --restore
 run nm-applet
 run picom --config ~/.config/compton.conf
 xmodmap ~/.config/awesome/swap_ctrl_alt
+bash ~/.config/awesome/cursor_speed
 xrdb -merge ~/.Xresources
-run numlockx on
-run light-locker
-# run emacs --daemon &
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Coordinate Transformation Matrix' 2.1 0 0 0 2.1 0 0 0 1
-
+run xss-lock -- betterlockscreen -l
+emacs --daemon &

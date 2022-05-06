@@ -12,17 +12,18 @@ local ctrlkey = "Mod1"
 
 local home = "/home/krishna/"
 local terminal = "alacritty"
--- local terminal = "kitty"
+-- local terminal = "wezterm"
 local editor = "micro"
 local gui_editor = "mousepad"
+local file_manager = "nemo"
 
 -- local browser = home .. ".local/bin/waterfox/waterfox"
--- local private_browser = browser .. " --private-window"
 local browser = "brave"
+-- local private_browser = browser .. " --private-window"
 local private_browser = browser .. " --incognito"
-local browser_name = "brave"
 
 local telegram = home .. ".local/bin/telegram"
+-- local telegram = "telegram-desktop"
 local rofi_dir = home .. ".config/rofi/"
 local scripts_dir = home .. ".config/myshell/scripts/"
 
@@ -76,7 +77,7 @@ local globalkeys = gears.table.join(
 
     awful.key({ modkey, }, "w",
     function ()
-        awful.spawn("rofi -show window -theme " .. rofi_dir .. "themes/winmode")
+        awful.spawn("rofi -show window")
     end,
     {description = "show all windows from all workspaces", group = "awesome"}),
 
@@ -155,7 +156,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "b", function () awful.spawn(private_browser) end,
     {description = "launch Browser", group = "launcher"}),
 
-    awful.key({ modkey, }, "e", function () awful.spawn("nemo") end,
+    awful.key({ modkey, }, "e", function () awful.spawn(file_manager) end,
     {description = "launch filemanager", group = "launcher"}),
 
     awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(-1) end,
@@ -165,7 +166,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "q", function () awful.spawn(terminal) end,
     {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey, }, "r", function () awful.spawn("emacs") end,
+    awful.key({ modkey, }, "r", function () awful.spawn("emacsclient -c") end,
     {description = "open Emacs", group = "launcher"}),
 
     awful.key({ modkey, altkey }, "Up", function () awful.client.incwfact( 0.05) end,
@@ -207,16 +208,19 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "v", function () awful.spawn(rofi_dir .. "helper/sound_launcher.sh") end,
     {description = "Control volume", group = "launcher"}),
 
+    awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
+    {description = "Wifi rofi launcher", group = "launcher"}),
+
     awful.key({ modkey, altkey }, "p", function () awful.spawn(rofi_dir .. "helper/qalc_launcher.sh") end,
     {description = "Qalculate via rofi", group = "launcher"}),
 
     awful.key({ modkey, "Shift" }, "v", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
     {description = "Mute volume ", group = "launcher"}),
 
-    awful.key({ modkey, altkey }, "b", function () awful.spawn(rofi_dir .. browser_name .. "/launcher.sh") end,
-    {description = "Brave menu ", group = "launcher"}),
+    awful.key({ modkey, altkey }, "b", function () awful.spawn(rofi_dir .. "/browser/launcher.sh") end,
+    {description = "Browser menu ", group = "launcher"}),
 
-    awful.key({ modkey, }, ";", function () awful.spawn("gcolor2") end,
+    awful.key({ modkey, }, "'", function () awful.spawn("gcolor3") end,
     {description = "Launch Color Picker", group = "launcher"}),
 
     awful.key({ modkey, altkey }, ";", function () awful.spawn(rofi_dir .. "color/select_color.sh") end,
@@ -231,10 +235,10 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "]", function () awful.spawn(telegram) end,
     {description = "Launch Telegram", group = "launcher"}),
 
-    awful.key({ modkey, }, "[", function () awful.spawn("blueman-manager") end,
+    awful.key({ modkey, }, "[", function () awful.spawn("blueberry") end,
     {description = "Launch Bluetooth manager", group = "launcher"}),
 
-    awful.key({ modkey, altkey }, "[", function () awful.spawn("killall blueman-applet && killall blueman-manager") end,
+    awful.key({ modkey, altkey }, "[", function () awful.spawn("killall blueberry") end,
     {description = "kill Bluetooth applet", group = "launcher"}),
 
     awful.key({ modkey, altkey }, "l", function () awful.tag.incmwfact( 0.01) end,
@@ -249,11 +253,14 @@ local globalkeys = gears.table.join(
     awful.key({ ctrlkey }, "Print", function () awful.spawn(scripts_dir .. "window_screenshot") end,
     {description = "capture a screenshot of active window", group = "screenshot"}),
 
-    awful.key({"Shift" }, "Print", function () awful.spawn(scripts_dir .. "area_screenshot") end,
+    awful.key({ altkey }, "Print", function () awful.spawn(scripts_dir .. "area_screenshot") end,
     {description = "capture a screenshot of selection", group = "screenshot"}),
 
     awful.key({ modkey }, "Print", function () awful.spawn(rofi_dir .. "screenshot/launcher.sh") end,
     {description = "screenshot rofi menu", group = "screenshot"}),
+
+    awful.key({ modkey }, "-", function () awful.spawn("screenkey") end,
+    {description = "launch screenkey", group = "launcher"}),
 
     -- Show/Hide Wibox
     awful.key({ modkey }, "g", function ()
@@ -301,7 +308,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey, ctrlkey }, "space", awful.client.floating.toggle,
     {description = "toggle floating", group = "client"}),
 
-    awful.key({ modkey, ctrlkey }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+    awful.key({ modkey, }, ";", function (c) c:swap(awful.client.getmaster()) end,
     {description = "move to master", group = "client"}),
 
     -- awful.key({ modkey,             }, "o",        function (c) c:move_to_screen()                 end,
