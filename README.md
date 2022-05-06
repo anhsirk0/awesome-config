@@ -2,6 +2,9 @@
 
 ## modified from awesome-copycats
 
+## Moonlight theme
+![moonlight](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/moonlight.png)
+
 ## Aqua theme
 ![aqua](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/aqua.png)
 
