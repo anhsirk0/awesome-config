@@ -24,7 +24,7 @@ local private_browser = browser .. " --incognito"
 
 local telegram = home .. ".local/bin/telegram"
 -- local telegram = "telegram-desktop"
-local rofi_dir = home .. ".config/rofi/"
+local rofi_dir = home .. ".config/awesome/rofi/"
 local scripts_dir = home .. ".config/myshell/scripts/"
 
 menubar.show_categories = false
@@ -202,10 +202,16 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "d", function () awful.spawn(rofi_dir .. "applaunch/launcher.sh") end,
     {description = "launch rofi", group = "launcher"}),
 
-    awful.key({ modkey, }, "a", function () awful.spawn(rofi_dir .. "helper/light_launcher.sh") end,
-    {description = "Control brightness", group = "launcher"}),
+    awful.key({ modkey, }, "a", function () awful.spawn(rofi_dir .. "helper/brightness_control.pl") end,
+    {description = "Control brightness", group = "brightness"}),
 
-    awful.key({ modkey, }, "v", function () awful.spawn(rofi_dir .. "helper/sound_launcher.sh") end,
+    awful.key({ modkey, "Shift" }, "a", function () awful.spawn("xbacklight -set 100") end,
+    {description = "Set brightness to max", group = "brightness"}),
+
+    awful.key({ modkey, altkey }, "a", function () awful.spawn("xbacklight -set 1") end,
+    {description = "Set brightness to min", group = "brightness"}),
+
+    awful.key({ modkey, }, "v", function () awful.spawn(rofi_dir .. "helper/volume_control.pl") end,
     {description = "Control volume", group = "launcher"}),
 
     awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
@@ -217,7 +223,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "v", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
     {description = "Mute volume ", group = "launcher"}),
 
-    awful.key({ modkey, altkey }, "b", function () awful.spawn(rofi_dir .. "/browser/launcher.sh") end,
+    awful.key({ modkey, altkey }, "b", function () awful.spawn(rofi_dir .. "/browser/browser_menu.pl") end,
     {description = "Browser menu ", group = "launcher"}),
 
     awful.key({ modkey, }, "'", function () awful.spawn("gcolor3") end,
