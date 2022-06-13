@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $config = "$ENV{HOME}/.config/rofi/helper/config.rasi";
+my $config = "$ENV{HOME}/.config/awesome/rofi/helper/config.rasi";
 
 my $current_volume = `amixer sget Master`;
 ($current_volume) = $current_volume =~ /\[(\d+)%\]/;

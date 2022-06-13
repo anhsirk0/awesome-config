@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 my $browser = $ENV{BROWSER} || "brave";
-my $config = "$ENV{HOME}/.config/rofi/browser/config.rasi";
+my $config = "$ENV{HOME}/.config/awesome/rofi/browser/config.rasi";
 
 # for web dev reasons
 my $ip_addr = `ip addr`;

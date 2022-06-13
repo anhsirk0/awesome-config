@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 my $db = "$ENV{HOME}/.local/share/lollypop/lollypop.db";
-my $config = "$ENV{HOME}/.config/rofi/lollypop/config.rasi";
+my $config = "$ENV{HOME}/.config/awesome/rofi/lollypop/config.rasi";
 my $query = q{select tracks.id, tracks.name, artists.name from tracks
               join track_artists on track_artists.track_id = tracks.id
               join artists on track_artists.artist_id = artists.id
