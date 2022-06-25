@@ -3,6 +3,7 @@ local gears = require("gears")
 local awful = require("awful")
 
 local menubar = require("menubar")
+
 -- local hotkeys_popup = require("awful.hotkeys_popup")
 local modkey = "Mod4"
 
@@ -22,10 +23,10 @@ local browser = "brave"
 -- local private_browser = browser .. " --private-window"
 local private_browser = browser .. " --incognito"
 
-local telegram = home .. ".local/bin/telegram"
+local telegram = home .. "/.local/bin/telegram"
 -- local telegram = "telegram-desktop"
-local rofi_dir = home .. ".config/awesome/rofi/"
-local scripts_dir = home .. ".config/myshell/scripts/"
+local rofi_dir = home .. "/.config/awesome/rofi/"
+local scripts_dir = home .. "/.config/myshell/scripts/"
 
 menubar.show_categories = false
 
