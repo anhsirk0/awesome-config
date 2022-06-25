@@ -10,7 +10,7 @@ local modkey = "Mod4"
 local altkey = "Control"
 local ctrlkey = "Mod1"
 
-local home = "/home/krishna/"
+local home = os.getenv("HOME")
 local terminal = "alacritty"
 -- local terminal = "wezterm"
 local editor = "micro"
@@ -217,8 +217,8 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
     {description = "Wifi rofi launcher", group = "launcher"}),
 
-    awful.key({ modkey, altkey }, "p", function () awful.spawn(rofi_dir .. "helper/qalc_launcher.sh") end,
-    {description = "Qalculate via rofi", group = "launcher"}),
+    awful.key({ modkey, altkey }, "p", function () awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort") end,
+    {description = "Rofi calc mode", group = "launcher"}),
 
     awful.key({ modkey, "Shift" }, "v", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
     {description = "Mute volume ", group = "launcher"}),
