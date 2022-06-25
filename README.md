@@ -2,6 +2,10 @@
 
 ## modified from awesome-copycats
 
+## Vivendi theme
+Work In progess
+![vivendi](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/vivendi.png)
+
 ## Moonlight theme
 ![moonlight](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/moonlight.png)
 
