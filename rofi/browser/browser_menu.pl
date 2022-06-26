@@ -47,6 +47,9 @@ if ($url) {
 } elsif ($key eq "i") { # Yandex reverse image search;
     $url = "yandex.com/images/search?rpt=imageview&url=$query";
     $message = qq{Searching yandex images for "$query"};
+} elsif ($key eq "di") { # DDG image search;
+    $url = "duckduckgo.com/?q=$query&ia=images&iax=images";
+    $message = qq{Searching images on DDG for "$query"};
 } elsif ($key eq "u") { # Just a plain url;
     $url = $query;
     $message = qq{Opening "$query"};
