@@ -10,8 +10,6 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local colors = loadfile(os.getenv("HOME") .. "/.config/awesome/themes/square/colors.lua")
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/minimal"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "Source Code Pro 9"
 -- theme.font                                      = "NotoSansMono Nerd Font 9"
 theme.taglist_font                              = "Source Code Pro 9"
@@ -52,45 +50,9 @@ theme.tasklist_bg_focus                         = "#060606"
 theme.bg_systray                                = theme.dark
 theme.menu_height                               = dpi(14)
 theme.menu_width                                = dpi(130)
-theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
-theme.awesome_icon                              = theme.dir .."/icons/awesome.png"
--- theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
--- theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = dpi(4)
-theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
-theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
-theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_normal_active       = theme.dir .. "/icons/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_inactive      = theme.dir .. "/icons/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_inactive     = theme.dir .. "/icons/titlebar/ontop_normal_inactive.png"
-theme.titlebar_sticky_button_focus_active       = theme.dir .. "/icons/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_normal_active      = theme.dir .. "/icons/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_inactive     = theme.dir .. "/icons/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_inactive    = theme.dir .. "/icons/titlebar/sticky_normal_inactive.png"
-theme.titlebar_floating_button_focus_active     = theme.dir .. "/icons/titlebar/floating_focus_active.png"
-theme.titlebar_floating_button_normal_active    = theme.dir .. "/icons/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_inactive   = theme.dir .. "/icons/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_inactive  = theme.dir .. "/icons/titlebar/floating_normal_inactive.png"
-theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
-theme.widget_net                                = theme.dir .. "/icons/net.png"
-theme.battery_full                              = theme.dir .. "/icons/battery_blue.png"
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6"}
@@ -141,12 +103,11 @@ local clock = awful.widget.watch(
 -- Wifi
 -- local wifi = wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }
 -- Battery
-local bat_icon = wibox.widget.imagebox(theme.battery_full)
 local bat = lain.widget.bat({
     settings = function()
         bat_header = ""
         -- bat_header = ""
-        bat_p      = bat_now.perc .. " "
+        bat_p      = " " .. bat_now.perc
         widget:set_markup(markup.font(theme.font, markup(theme.blue, bat_header .. bat_p)))
     end
 })
@@ -246,7 +207,6 @@ function theme.at_screen_connect(s)
             first,
             theme.volume.widget,
             first,
-            bat_icon,
             bat,
             first,
             clock,

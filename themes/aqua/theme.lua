@@ -17,7 +17,6 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local wallpaper_dir = "/mnt/extras/Wallpapers"
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/aqua"
 theme.wallpaper                                 = wallpaper_dir .. "/eos_astronaut.png"
 
 theme.font                                      = "Fira Code Retina 9"
@@ -71,28 +70,10 @@ theme.tasklist_bg_focus                         = theme.bg3
 theme.bg_systray                                = theme.dark
 theme.menu_height                               = dpi(14)
 theme.menu_width                                = dpi(130)
-theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
-theme.awesome_icon                              = theme.dir .."/icons/awesome.png"
--- theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
--- theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = dpi(2)
 
-theme.widget_net                                = theme.dir .. "/icons/net.png"
-theme.battery_full                              = theme.dir .. "/icons/battery_blue.png"
 
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7"}
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
@@ -134,7 +115,6 @@ local clock = awful.widget.watch(
 -- Wifi
 -- local wifi = wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }
 -- Battery
-local bat_icon = wibox.widget.imagebox(theme.battery_full)
 local bat = lain.widget.bat({
     settings = function()
         if bat_now.ac_status == 1 then
@@ -143,7 +123,7 @@ local bat = lain.widget.bat({
         else
             bat_header = " "
         end
-        bat_p      = bat_now.perc .. ""
+        bat_p      = " " .. bat_now.perc
         widget:set_markup(markup.font(theme.font, markup(theme.aqua, bat_p .. bat_header)))
     end
 })
@@ -259,7 +239,7 @@ function theme.at_screen_connect(s)
             wibox.container.background(mysep(theme.bg3, right_tri), theme.bg4),
             wibox.container.background(wibox.container.margin(theme.volume.widget, dpi(2), dpi(4)), theme.bg3),
             wibox.container.background(mysep(theme.bg2, right_tri), theme.bg3),
-            wibox.container.background(wibox.container.margin(wibox.widget { bat_icon, bat, layout = wibox.layout.align.horizontal }, dpi(2), dpi(4)), theme.bg2),
+            wibox.container.background(wibox.container.margin(wibox.widget { bat, layout = wibox.layout.align.horizontal }, dpi(2), dpi(4)), theme.bg2),
             wibox.container.background(mysep(theme.bg1, right_tri), theme.bg2),
             wibox.container.background(clock, theme.bg1),
         },
