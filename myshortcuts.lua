@@ -19,7 +19,7 @@ local gui_editor = "mousepad"
 local file_manager = "nemo"
 
 -- local browser = home .. ".local/bin/waterfox/waterfox"
-local browser = "brave"
+local browser = "brave-browser"
 -- local private_browser = browser .. " --private-window"
 local private_browser = browser .. " --incognito"
 
@@ -27,6 +27,7 @@ local telegram = home .. "/.local/bin/telegram"
 -- local telegram = "telegram-desktop"
 local rofi_dir = home .. "/.config/awesome/rofi/"
 local scripts_dir = home .. "/.config/myshell/scripts/"
+local lockscreen = "betterlockscreen -l"
 
 menubar.show_categories = false
 
@@ -218,6 +219,9 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
     {description = "Wifi rofi launcher", group = "launcher"}),
 
+    awful.key({ modkey, altkey }, "e", function () awful.spawn(rofi_dir .. "emoji/emoji.pl") end,
+    {description = "Select emoji using rofi", group = "launcher"}),
+
     awful.key({ modkey, altkey }, "p", function () awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort") end,
     {description = "Rofi calc mode", group = "launcher"}),
 
@@ -266,8 +270,8 @@ local globalkeys = gears.table.join(
     awful.key({ modkey }, "Print", function () awful.spawn(rofi_dir .. "screenshot/launcher.sh") end,
     {description = "screenshot rofi menu", group = "screenshot"}),
 
-    awful.key({ modkey }, "-", function () awful.spawn("screenkey") end,
-    {description = "launch screenkey", group = "launcher"}),
+    awful.key({ modkey }, "-", function () awful.spawn(lockscreen) end,
+    {description = "Lockscreen", group = "launcher"}),
 
     -- Show/Hide Wibox
     awful.key({ modkey }, "g", function ()
