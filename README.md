@@ -41,5 +41,7 @@ Work In progess
 ## Some defaults info
 Default font - [Iosevka Comfy](https://gitlab.com/protesilaos/iosevka-comfy)  
 Rofi Scripts are located in ```~/.config/awesome/```.  
-> if you have your Rofi Scripts in ```~/.config/rofi```, you can just change the ```rofi_dir```(myshortcuts.lua) variable to appropriate location
+> if you have your Rofi Scripts in ```~/.config/rofi```, you can just change the ```rofi_dir```(myshortcuts.lua) variable to appropriate location  
+Newer themes are for resolution 1920x1080 while some are for 1366x768, change the font size, gaps etc etc accordingly  
+Matching themes are also avalable for Alacritty and Kakoune in my [alacritty-config](https://github.com/anhsirk0/alacritty-config) and [kakoune-themes](https://github.com/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
