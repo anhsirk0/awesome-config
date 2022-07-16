@@ -20,8 +20,7 @@ local wallpaper_dir = "/mnt/extras/Wallpapers"
 local theme                                     = {}
 theme.wallpaper                                 = wallpaper_dir .. "/arch_minimal.png"
 
-theme.font                                      = "Iosevka Term SS04 11"
--- theme.taglist_font                              = "NotoSansMono Nerd Font 9"
+theme.font                                      = "Iosevka Comfy 11"
 theme.notification_font                         = "Iosevka 19"
 theme.notification_max_width                    = 400
 theme.taglist_font                              = theme.font
@@ -121,7 +120,7 @@ theme.volume = lain.widget.alsa({
 })
 
 -- Separators
-local first     = wibox.widget.textbox('<span font="Fira Code Retina 4"> </span>')
+local first     = wibox.widget.textbox('<span font="Iosevka Comfy 4"> </span>')
 
 local barheight = dpi(24)
 local barcolor  = theme.dark

@@ -19,11 +19,10 @@ local wallpaper_dir = "/mnt/extras/Wallpapers"
 local theme                                     = {}
 theme.wallpaper                                 = wallpaper_dir .. "/eos_astronaut.png"
 
-theme.font                                      = "Fira Code Retina 9"
--- theme.taglist_font                              = "NotoSansMono Nerd Font 9"
-theme.notification_font                         = "Fira Code Retina 19"
+theme.font                                      = "Iosevka Comfy 9"
+theme.notification_font                         = "Iosevka Comfy 19"
 theme.notification_max_width                    = 400
-theme.taglist_font                              = "Fira Code Retina 9"
+theme.taglist_font                              = "Iosevka Comfy 9"
 
 theme.accent                                    = "#e3f7a1"
 theme.white                                     = "#dcdbd7"
@@ -146,7 +145,7 @@ theme.volume = lain.widget.alsa({
 })
 
 -- Separators
-local first     = wibox.widget.textbox('<span font="Fira Code Retina 4">  </span>')
+local first     = wibox.widget.textbox('<span font="Iosevka Comfy 4">  </span>')
 
 function right_tri(cr, width, height, degree)
     cr:move_to(18, 0)

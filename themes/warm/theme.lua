@@ -16,9 +16,8 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.font                                      = "Source Code Pro 9"
--- theme.taglist_font                              = "NotoSansMono Nerd Font 9"
-theme.taglist_font                              = "Source Code Pro 9"
+theme.font                                      = "Iosevka Comfy 9"
+theme.taglist_font                              = "Iosevka Comfy 9"
 theme.accent                                    = "#b8bb26"
 theme.white                                     = "#bebebe"
 theme.dark                                      = "#222120"
