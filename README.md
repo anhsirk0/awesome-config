@@ -1,6 +1,9 @@
 # my config for awesome window manager
 
-## modified from awesome-copycats
+## Features
+Minimal - no fancy effects, widgets  
+Modular - Different files for keybindings, rules, rc.lua  
+Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 
 ## Vivendi theme
 Work In progess
@@ -35,3 +38,8 @@ Work In progess
 ## Boxes theme
 ![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes2.png)
 
+## Some defaults info
+Default font - [Iosevka Comfy](https://gitlab.com/protesilaos/iosevka-comfy)  
+Rofi Scripts are located in ```~/.config/awesome/```.  
+> if you have your Rofi Scripts in ```~/.config/rofi```, you can just change the ```rofi_dir```(myshortcuts.lua) variable to appropriate location
+modified from awesome-copycats
