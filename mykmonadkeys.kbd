@@ -1,0 +1,71 @@
+;;                               Configuration for most TKL keyboards
+;;                       use this if you need numeric keypad in some scenarios
+;;                   binded as numpad keys (not just numerics) for alt-codes input
+
+(defcfg
+  ;; ** For Linux **
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd") ;; Change this line for your device
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12            prnt    del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc      
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \         
+  caps    a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft             up
+  lctl    lmet lalt           spc            ralt  rctl                left    down    right
+)
+ 
+(defalias
+    tca (tap-next esc (layer-toggle ctrlalt))
+;;   num  (tap-macro nlck (layer-switch numpad)) ;; Bind 'num' to numpad Layer
+;;   def  (tap-macro nlck (layer-switch qwerty)) ;; Bind 'def' to qwerty Layer
+;;   nm2 (layer-toggle numbers) ;; Bind 'nm2' to numbers under left hand layer for fast input
+)
+
+(deflayer qwerty
+  caps     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12            prnt    del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc      
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \         
+  @tca    a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft             up
+  lalt    lmet lctrl           spc            rctl  ralt                left    down    right
+)
+
+(deflayer ctrlalt
+  caps     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12            prnt    del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc      
+  tab     C-A-q  C-A-w  C-A-e  C-A-r  C-A-t  C-A-y  C-A-u  C-A-i  C-A-o  C-A-p    [    ]    \         
+  esc     C-A-a  C-A-s  C-A-d  C-A-f  C-A-g  C-A-h  C-A-j  C-A-k  C-A-l  C-A-;    '    ret
+  lsft    C-A-z  C-A-x  C-A-c  C-A-v  C-A-b  C-A-n  C-A-m  C-A-,  C-A-.  C-A-/    rsft             up
+  lalt    lmet lctrl           spc            rctl  ralt                left    down    right
+)
+;; (deflayer numpad
+;;   _       _    _    _    _    _    _    _    _    _    _    _    _              _    @def _
+;;   _       _    _    _    _    XX   kp/  kp7  kp8  kp9  kp-  _    _    _         _    _    _
+;;   _       _    _    _    _    XX   kp*  kp4  kp5  kp6  kp+  XX   XX   _         _    _    _
+;;   _       _    _    _    _    XX  XX    kp1  kp2  kp3  XX   _    _
+;;   _         _    _    _    _    _    XX   kp0  _    _    _    _                      _
+;;   _       _    _                 _              _    _    @nm2 _                _    _    _
+;; )
+
+;; (deflayer numbers
+;;   _       _    _    _    _    _    _    _    _    _    _    _    _              _    _    _
+;;   _       7    8    9    _    _    _    _    _    _    _    _    _    _         _    _    _
+;;   _       4    5    6    _    _    _    _    _    _    _    _    _    _         _    _    _
+;;   _       1    2    3    _    _    _    _    _    _    _    _    _
+;;   _         0    _    _    _    _    _    _    _    _    _    _                      _
+;;   _       _    _                 _              _    _    _    _                _    _    _
+;; )
