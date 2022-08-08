@@ -7,8 +7,6 @@ local dpi   = require("beautiful.xresources").apply_dpi
 local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
-local colors = loadfile(os.getenv("HOME") .. "/.config/awesome/themes/square/colors.lua")
-
 local theme                                     = {}
 theme.font                                      = "Iosevka Comfy 9"
 theme.taglist_font                              = "Iosevka Comfy 9"
@@ -18,7 +16,6 @@ theme.blue                                      = "#a3f7ff"
 theme.red                                       = "#ffe585"
 theme.accent                                    = "#2dfea2"
 theme.white                                     = "#ffffff"
--- theme.white                                     = colors.white
 theme.indigo                                    = "#9fa8da"
 theme.green                                     = "#64de83"
 theme.light_green                               = "#69f0ae"
