@@ -5,6 +5,9 @@ Minimal - no fancy effects, widgets
 Modular - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 
+## Operandi theme
+![operandi](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/operandi.png)
+
 ## Vivendi theme
 Work In progess
 ![vivendi](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/vivendi.png)
