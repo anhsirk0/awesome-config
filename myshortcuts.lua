@@ -18,10 +18,10 @@ local editor = "micro"
 local gui_editor = "mousepad"
 local file_manager = "nemo"
 
--- local browser = home .. ".local/bin/waterfox/waterfox"
-local browser = "brave"
--- local private_browser = browser .. " --private-window"
-local private_browser = browser .. " --incognito"
+local browser = "firefox"
+-- local browser = "brave"
+local private_browser = browser .. " --private-window"
+-- local private_browser = browser .. " --incognito"
 
 local telegram = home .. "/.local/bin/telegram"
 -- local telegram = "telegram-desktop"
@@ -213,6 +213,9 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
       {description = "Wifi rofi launcher", group = "launcher"}),
 
+   awful.key({ modkey, altkey }, "e", function () awful.spawn(rofi_dir .. "emoji/emoji.pl") end,
+      {description = "Emoji rofi launcher", group = "launcher"}),
+
    awful.key({ modkey, altkey }, "p", function () awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort") end,
       {description = "Rofi calc mode", group = "launcher"}),
 
@@ -231,8 +234,8 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, }, "p", function () awful.spawn("zathura") end,
       {description = "Zathura", group = "launcher"}),
 
-   awful.key({ modkey, }, "=", function () awful.spawn(scripts_dir .. "swap_ctrl_alt") end,
-      {description = "Swap ctrl alt", group = "launcher"}),
+   -- awful.key({ modkey, }, "=", function () awful.spawn.wih_shell(scripts_dir .. "ext_keyboard_kmonad") end,
+   --    {description = "Swap ctrl alt", group = "launcher"}),
 
    awful.key({ modkey, }, "]", function () awful.spawn(telegram) end,
       {description = "Launch Telegram", group = "launcher"}),
@@ -265,6 +268,10 @@ local globalkeys = gears.table.join(
       {description = "Lockscreen", group = "launcher"}),
 
    -- Finer control over brightness and volume via Ctrl-Alt keybindings
+   -- Pressing Ctrl-Alt kebindings is kinda hassle,
+   -- to overcome this I am using kmonad (https://github.com/kmonad/kmonad)
+   -- via kmonad config, When you hold down capslock it act as holding Ctrl+Alt
+   -- the following keybindings are now easily pressable
    awful.key({ altkey, ctrlkey }, "f", function () awful.spawn("xbacklight -set 100") end,
       {description = "Set brightness to max", group = "brightness"}),
 
@@ -281,7 +288,7 @@ local globalkeys = gears.table.join(
    awful.key({ altkey, ctrlkey }, "v", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ 100%") end,
       {description = "Set volume to max", group = "volume"}),
 
-   awful.key({ altkey, ctrlkey }, "c", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ 0%") end,
+   awful.key({ altkey, ctrlkey }, "c", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
       {description = "Set volume to min", group = "volume"}),
 
    awful.key({ altkey, ctrlkey }, "z", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%") end,
@@ -289,7 +296,11 @@ local globalkeys = gears.table.join(
 
    awful.key({ altkey, ctrlkey }, "x", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%") end,
       {description = "Increase volume 10%", group = "volume"}),
--- End finer controls
+
+   -- Other shortcuts
+   awful.key({ altkey, ctrlkey }, "k", function () awful.spawn("killall java") end,
+      {description = "Increase volume 10%", group = "volume"}),   
+   -- End finer controls
    
    -- Show/Hide Wibox
    awful.key({ modkey }, "g", function ()
