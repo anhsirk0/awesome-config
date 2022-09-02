@@ -18,8 +18,8 @@ local editor = "micro"
 local gui_editor = "mousepad"
 local file_manager = "nemo"
 
-local browser = "firefox"
--- local browser = "brave"
+-- local browser = "firefox"
+local browser = "brave"
 local private_browser = browser .. " --private-window"
 -- local private_browser = browser .. " --incognito"
 
@@ -272,30 +272,47 @@ local globalkeys = gears.table.join(
    -- to overcome this I am using kmonad (https://github.com/kmonad/kmonad)
    -- via kmonad config, When you hold down capslock it act as holding Ctrl+Alt
    -- the following keybindings are now easily pressable
+   -- Brightness min/max
    awful.key({ altkey, ctrlkey }, "f", function () awful.spawn("xbacklight -set 100") end,
       {description = "Set brightness to max", group = "brightness"}),
 
    awful.key({ altkey, ctrlkey }, "d", function () awful.spawn("xbacklight -set 1") end,
       {description = "Set brightness to min", group = "brightness"}),
 
+   -- Brightness 10%
    awful.key({ altkey, ctrlkey }, "a", function () awful.spawn("xbacklight -dec 10") end,
       {description = "Decrease brightness 10%", group = "brightness"}),
 
    awful.key({ altkey, ctrlkey }, "s", function () awful.spawn("xbacklight -inc 10") end,
       {description = "Increase brightness 10%", group = "brightness"}),
 
-   -- Volume
+   -- Brightness 5%
+   awful.key({ altkey, ctrlkey }, "g", function () awful.spawn("xbacklight -dec 5") end,
+      {description = "Decrease brightness 5%", group = "brightness"}),
+
+   awful.key({ altkey, ctrlkey }, "h", function () awful.spawn("xbacklight -inc 5") end,
+      {description = "Increase brightness 5%", group = "brightness"}),
+
+   -- Volume min/max
    awful.key({ altkey, ctrlkey }, "v", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ 100%") end,
       {description = "Set volume to max", group = "volume"}),
 
    awful.key({ altkey, ctrlkey }, "c", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
       {description = "Set volume to min", group = "volume"}),
 
+   -- Volume 10%
    awful.key({ altkey, ctrlkey }, "z", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%") end,
       {description = "Decrease volume 10%", group = "volume"}),
 
    awful.key({ altkey, ctrlkey }, "x", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%") end,
       {description = "Increase volume 10%", group = "volume"}),
+
+   -- Volume 5%
+   awful.key({ altkey, ctrlkey }, "b", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end,
+      {description = "Decrease volume 5%", group = "volume"}),
+
+   awful.key({ altkey, ctrlkey }, "n", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end,
+      {description = "Increase volume 5%", group = "volume"}),
 
    -- Other shortcuts
    awful.key({ altkey, ctrlkey }, "k", function () awful.spawn("killall java") end,
