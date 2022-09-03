@@ -252,13 +252,13 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, altkey }, "h", function () awful.tag.incmwfact(-0.01) end,
       {description = "decrease master width factor 1", group = "layout"}),
 
-   awful.key({ }, "Print", function () awful.spawn(scripts_dir .. "full_screenshot") end,
+   awful.key({ }, "Print", function () awful.spawn(scripts_dir .. "full-screenshot") end,
       {description = "capture a screenshot", group = "screenshot"}),
 
-   awful.key({ ctrlkey }, "Print", function () awful.spawn(scripts_dir .. "window_screenshot") end,
+   awful.key({ ctrlkey }, "Print", function () awful.spawn(scripts_dir .. "window-screenshot") end,
       {description = "capture a screenshot of active window", group = "screenshot"}),
 
-   awful.key({ altkey }, "Print", function () awful.spawn(scripts_dir .. "area_screenshot") end,
+   awful.key({ altkey }, "Print", function () awful.spawn(scripts_dir .. "area-screenshot") end,
       {description = "capture a screenshot of selection", group = "screenshot"}),
 
    awful.key({ modkey }, "Print", function () awful.spawn(rofi_dir .. "screenshot/launcher.sh") end,
