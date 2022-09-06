@@ -1,6 +1,7 @@
 -- My shortcuts for awesomewm
 local gears = require("gears")
 local awful = require("awful")
+local naughty = require("naughty")
 
 local menubar = require("menubar")
 
@@ -29,7 +30,24 @@ local rofi_dir = home .. "/.config/awesome/rofi/"
 local scripts_dir = home .. "/.config/myshell/scripts/"
 local lockscreen = "betterlockscreen -l"
 
+local get_brightness_cmd = "xbacklight -get"
+local volume_cmd = scripts_dir .. "/volume" -- https://github.com/anhsirk0/volume
+
 menubar.show_categories = false
+
+function spawn_and_notify(command, message, message_cmd)
+   return function ()
+      awful.spawn(command)
+      if message_cmd then
+	 os.execute("sleep 0.005") -- `volume -get` is slightly faster than `volume -set`
+	 awful.spawn.easy_async(message_cmd, function(stdout, stderr, reason, exit_code)
+				   naughty.notify { text = message .. string.gsub(stdout, "\n", "") }
+	 end)
+      else
+	 naughty.notify { text = message }
+      end
+   end
+end
 
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
@@ -273,50 +291,45 @@ local globalkeys = gears.table.join(
    -- via kmonad config, When you hold down capslock it act as holding Ctrl+Alt
    -- the following keybindings are now easily pressable
    -- Brightness min/max
-   awful.key({ altkey, ctrlkey }, "f", function () awful.spawn("xbacklight -set 100") end,
+   awful.key({ altkey, ctrlkey }, "f", spawn_and_notify("xbacklight -set 100", "Brightness 100"),
       {description = "Set brightness to max", group = "brightness"}),
-
-   awful.key({ altkey, ctrlkey }, "d", function () awful.spawn("xbacklight -set 1") end,
+   awful.key({ altkey, ctrlkey }, "d", spawn_and_notify("xbacklight -set 1", "Brightness 1"),
       {description = "Set brightness to min", group = "brightness"}),
 
    -- Brightness 10%
-   awful.key({ altkey, ctrlkey }, "a", function () awful.spawn("xbacklight -dec 10") end,
+   awful.key({ altkey, ctrlkey }, "a", spawn_and_notify("xbacklight -dec 10", "Brightness ", get_brightness_cmd),
       {description = "Decrease brightness 10%", group = "brightness"}),
-
-   awful.key({ altkey, ctrlkey }, "s", function () awful.spawn("xbacklight -inc 10") end,
+   awful.key({ altkey, ctrlkey }, "s", spawn_and_notify("xbacklight -inc 10", "Brightness ", get_brightness_cmd),
       {description = "Increase brightness 10%", group = "brightness"}),
 
    -- Brightness 5%
-   awful.key({ altkey, ctrlkey }, "g", function () awful.spawn("xbacklight -dec 5") end,
+   awful.key({ altkey, ctrlkey }, "g", spawn_and_notify("xbacklight -dec 5", "Brightness ", get_brightness_cmd),
       {description = "Decrease brightness 5%", group = "brightness"}),
-
-   awful.key({ altkey, ctrlkey }, "h", function () awful.spawn("xbacklight -inc 5") end,
+   awful.key({ altkey, ctrlkey }, "h", spawn_and_notify("xbacklight -inc 5", "Brightness ", get_brightness_cmd),
       {description = "Increase brightness 5%", group = "brightness"}),
 
    -- Volume min/max
-   awful.key({ altkey, ctrlkey }, "v", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ 100%") end,
+   awful.key({ altkey, ctrlkey }, "v", spawn_and_notify(volume_cmd .. " -set 100", "Volume 100"),
       {description = "Set volume to max", group = "volume"}),
-
-   awful.key({ altkey, ctrlkey }, "c", function () awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
-      {description = "Set volume to min", group = "volume"}),
+   awful.key({ altkey, ctrlkey }, "c", spawn_and_notify(volume_cmd .. " -mute", "Volume mute toggle"),
+      {description = "Toggles mute", group = "volume"}),
 
    -- Volume 10%
-   awful.key({ altkey, ctrlkey }, "z", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%") end,
+   awful.key({ altkey, ctrlkey }, "z", spawn_and_notify(volume_cmd .. " -dec 10", "Volume ", volume_cmd .. " -get"),
       {description = "Decrease volume 10%", group = "volume"}),
-
-   awful.key({ altkey, ctrlkey }, "x", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%") end,
+   awful.key({ altkey, ctrlkey }, "x", spawn_and_notify(volume_cmd .. " -inc 10", "Volume ", volume_cmd .. " -get"),
       {description = "Increase volume 10%", group = "volume"}),
 
    -- Volume 5%
-   awful.key({ altkey, ctrlkey }, "b", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end,
+   awful.key({ altkey, ctrlkey }, "b", spawn_and_notify(volume_cmd .. " -dec 5", "Volume ", volume_cmd .. " -get"),
       {description = "Decrease volume 5%", group = "volume"}),
-
-   awful.key({ altkey, ctrlkey }, "n", function () awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end,
+   awful.key({ altkey, ctrlkey }, "n", spawn_and_notify(volume_cmd .. " -inc 5", "Volume ", volume_cmd .. " -get"),
       {description = "Increase volume 5%", group = "volume"}),
 
    -- Other shortcuts
-   awful.key({ altkey, ctrlkey }, "k", function () awful.spawn("killall java") end,
+   awful.key({ altkey, ctrlkey }, "k", spawn_and_notify("killall java", "Killed XDM"),
       {description = "Increase volume 10%", group = "volume"}),   
+   -- End Other shortcuts
    -- End finer controls
    
    -- Show/Hide Wibox
@@ -417,88 +430,88 @@ clientbuttons = gears.table.join(
 
 local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 }
 for i = 1, 9 do
-   globalkeys = gears.table.join(globalkeys,
+   globalkeys = gears.table.join(
+      globalkeys,
+      -- View tag only.
+      awful.key({ modkey }, "#" .. np_map[i],
+	 function ()
+	    local screen = awful.screen.focused()
+	    local tag = screen.tags[i]
+	    if tag then
+	       tag:view_only()
+	    end
+	 end,
+	 {description = "view tag #"..i, group = "tag"}),
 
-				 -- View tag only.
-				 awful.key({ modkey }, "#" .. np_map[i],
-				    function ()
-				       local screen = awful.screen.focused()
-				       local tag = screen.tags[i]
-				       if tag then
-					  tag:view_only()
-				       end
-				    end,
-				    {description = "view tag #"..i, group = "tag"}),
+      -- Toggle tag display.
+      awful.key({ modkey, altkey }, "#" .. np_map[i],
+	 function ()
+	    local screen = awful.screen.focused()
+	    if client.focus then
+	       local tag = client.focus.screen.tags[i]
+	       if tag then
+		  client.focus:move_to_tag(tag)
+	       end
+	    end
+	    local tag = screen.tags[i]
+	    if tag then
+	       tag:view_only()
+	    end
+	 end,
+	 {description = "toggle tag #" .. i, group = "tag"}),
 
-				 -- Toggle tag display.
-				 awful.key({ modkey, altkey }, "#" .. np_map[i],
-				    function ()
-				       local screen = awful.screen.focused()
-				       if client.focus then
-					  local tag = client.focus.screen.tags[i]
-					  if tag then
-					     client.focus:move_to_tag(tag)
-					  end
-				       end
-				       local tag = screen.tags[i]
-				       if tag then
-					  tag:view_only()
-				       end
-				    end,
-				    {description = "toggle tag #" .. i, group = "tag"}),
+      -- Move client to tag.
+      awful.key({ modkey, "Shift" }, "#" .. np_map[i],
+	 function ()
+	    if client.focus then
+	       local tag = client.focus.screen.tags[i]
+	       if tag then
+		  client.focus:move_to_tag(tag)
+	       end
+	    end
+	 end,
+	 {description = "move focused client to tag #"..i, group = "tag"}),
 
-				 -- Move client to tag.
-				 awful.key({ modkey, "Shift" }, "#" .. np_map[i],
-				    function ()
-				       if client.focus then
-					  local tag = client.focus.screen.tags[i]
-					  if tag then
-					     client.focus:move_to_tag(tag)
-					  end
-				       end
-				    end,
-				    {description = "move focused client to tag #"..i, group = "tag"}),
+      -- This should map on the top row of your keyboard, usually 1 to 9.
+      -- View tag only.
+      awful.key({ modkey }, "#" .. i + 9,
+	 function ()
+	    local screen = awful.screen.focused()
+	    local tag = screen.tags[i]
+	    if tag then
+	       tag:view_only()
+	    end
+	 end,
+	 {description = "view tag #"..i, group = "tag"}),
 
-				 -- This should map on the top row of your keyboard, usually 1 to 9.
-				 -- View tag only.
-				 awful.key({ modkey }, "#" .. i + 9,
-				    function ()
-				       local screen = awful.screen.focused()
-				       local tag = screen.tags[i]
-				       if tag then
-					  tag:view_only()
-				       end
-				    end,
-				    {description = "view tag #"..i, group = "tag"}),
+      -- Toggle tag display.
+      awful.key({ modkey, altkey }, "#" .. i + 9,
+	 function ()
+	    local screen = awful.screen.focused()
+	    if client.focus then
+	       local tag = client.focus.screen.tags[i]
+	       if tag then
+		  client.focus:move_to_tag(tag)
+	       end
+	    end
+	    local tag = screen.tags[i]
+	    if tag then
+	       tag:view_only()
+	    end
+	 end,
+	 {description = "toggle tag #" .. i, group = "tag"}),
 
-				 -- Toggle tag display.
-				 awful.key({ modkey, altkey }, "#" .. i + 9,
-				    function ()
-				       local screen = awful.screen.focused()
-				       if client.focus then
-					  local tag = client.focus.screen.tags[i]
-					  if tag then
-					     client.focus:move_to_tag(tag)
-					  end
-				       end
-				       local tag = screen.tags[i]
-				       if tag then
-					  tag:view_only()
-				       end
-				    end,
-				    {description = "toggle tag #" .. i, group = "tag"}),
-
-				 -- Move client to tag.
-				 awful.key({ modkey, "Shift" }, "#" .. i + 9,
-				    function ()
-				       if client.focus then
-					  local tag = client.focus.screen.tags[i]
-					  if tag then
-					     client.focus:move_to_tag(tag)
-					  end
-				       end
-				    end,
-				    {description = "move focused client to tag #"..i, group = "tag"})
+      -- Move client to tag.
+      awful.key({ modkey, "Shift" }, "#" .. i + 9,
+	 function ()
+	    if client.focus then
+	       local tag = client.focus.screen.tags[i]
+	       if tag then
+		  client.focus:move_to_tag(tag)
+	       end
+	    end
+	 end,
+	 {description = "move focused client to tag #"..i, group = "tag"})
    )
 end
 
