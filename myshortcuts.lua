@@ -21,8 +21,8 @@ local file_manager = "nemo"
 
 -- local browser = "firefox"
 local browser = "brave"
-local private_browser = browser .. " --private-window"
--- local private_browser = browser .. " --incognito"
+-- local private_browser = browser .. " --private-window"
+local private_browser = browser .. " --incognito"
 
 local telegram = home .. "/.local/bin/telegram"
 -- local telegram = "telegram-desktop"
@@ -39,7 +39,7 @@ function spawn_and_notify(command, message, message_cmd)
    return function ()
       awful.spawn(command)
       if message_cmd then
-	 os.execute("sleep 0.005") -- `volume -get` is slightly faster than `volume -set`
+	 os.execute("sleep 0.05") -- `volume -get` is slightly faster than `volume -set`
 	 awful.spawn.easy_async(message_cmd, function(stdout, stderr, reason, exit_code)
 				   naughty.notify { text = message .. string.gsub(stdout, "\n", "") }
 	 end)
