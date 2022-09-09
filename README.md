@@ -38,18 +38,18 @@ Work In progess
 ![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes2.png)
 
 ## change-theme.pl
-use change-theme.pl to change the themes (fzf optionally required)
+use `change-theme.pl` to change the themes (fzf optionally required)
 ```bash
-$ ~/.config/alacritty/change-theme.pl 
+$ ~/.config/awesome/change-theme.pl 
 ```
-> This will use fzf to select a theme interactively (fzf)
+> This will use fzf to select a theme (from ~/.config/awesome/themes) interactively (fzf)
 ```bash
-$ ~/.config/alacritty/change-theme.pl viv
+$ ~/.config/awesome/change-theme.pl viv
 'vivendi' theme selected
 ```
 > This will change theme to the first theme that has viv in its name
 ```bash
-$ ~/.config/alacritty/change-theme.pl gruv
+$ ~/.config/awesome/change-theme.pl gruv
 'gruv' theme selected
 ```
 > This will change theme to the first theme that has gruv in its name, like gruvbox
