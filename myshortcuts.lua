@@ -39,12 +39,16 @@ function spawn_and_notify(command, message, message_cmd)
    return function ()
       awful.spawn(command)
       if message_cmd then
-	 os.execute("sleep 0.05") -- `volume -get` is slightly faster than `volume -set`
-	 awful.spawn.easy_async(message_cmd, function(stdout, stderr, reason, exit_code)
-				   naughty.notify { text = message .. string.gsub(stdout, "\n", "") }
-	 end)
+         os.execute("sleep 0.05") -- `volume -get` is slightly faster than `volume -set`
+         awful.spawn.easy_async(
+            message_cmd,
+            function(stdout, stderr, reason, exit_code)
+               naughty.destroy_all_notifications()
+               naughty.notify { text = message .. string.gsub(stdout, "\n", "") }
+            end
+         )
       else
-	 naughty.notify { text = message }
+         naughty.notify { text = message }
       end
    end
 end
@@ -189,17 +193,17 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, }, "r", function () awful.spawn("emacsclient -c") end,
       {description = "open Emacs", group = "launcher"}),
 
-   awful.key({ modkey, altkey }, "Up", function () awful.client.incwfact( 0.05) end,
+   awful.key({ modkey, altkey }, "j", function () awful.client.incwfact( 0.05) end,
       {description = "increase client size vertically", group = "client"}),
 
-   awful.key({ modkey, altkey }, "Down", function () awful.client.incwfact(-0.05) end,
+   awful.key({ modkey, altkey }, "k", function () awful.client.incwfact(-0.05) end,
       {description = "decrease client size vertically", group = "client"}),
 
-   awful.key({ modkey, altkey }, "Right", function () awful.tag.incmwfact( 0.05) end,
-      {description = "increase master width factor", group = "layout"}),
+   -- awful.key({ modkey, altkey }, "Right", function () awful.tag.incmwfact( 0.05) end,
+   --    {description = "increase master width factor", group = "layout"}),
 
-   awful.key({ modkey, altkey }, "Left", function () awful.tag.incmwfact(-0.05) end,
-      {description = "decrease master width factor", group = "layout"}),
+   -- awful.key({ modkey, altkey }, "Left", function () awful.tag.incmwfact(-0.05) end,
+   --    {description = "decrease master width factor", group = "layout"}),
 
    awful.key({ modkey, }, "i", function () awful.spawn("xdman") end,
       {description = "launch xdm", group = "launcher"}),
@@ -278,6 +282,9 @@ local globalkeys = gears.table.join(
 
    awful.key({ altkey }, "Print", function () awful.spawn(scripts_dir .. "area-screenshot") end,
       {description = "capture a screenshot of selection", group = "screenshot"}),
+
+   awful.key({ "Shift" }, "Print", function () awful.spawn(scripts_dir .. "ocr") end,
+      {description = "Get OCR text of selection", group = "screenshot"}),
 
    awful.key({ modkey }, "Print", function () awful.spawn(rofi_dir .. "screenshot/launcher.sh") end,
       {description = "screenshot rofi menu", group = "screenshot"}),
