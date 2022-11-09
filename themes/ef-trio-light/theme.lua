@@ -48,8 +48,8 @@ theme.purple_bright                             = "#c035aa"
 theme.accent                                    = "#eed0ff"
 theme.accent_dark                               = "#ddb4ff"
 
-theme.fg_normal                                 = theme.dark
-theme.fg_focus                                  = theme.accent
+theme.fg_normal                                 = theme.white
+theme.fg_focus                                  = theme.purple
 theme.bg_normal                                 = theme.dark
 theme.bg_focus                                  = theme.dark
 theme.fg_urgent                                 = theme.red
