@@ -5,6 +5,9 @@ Minimal - no fancy effects, widgets
 Modular - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 
+## Ef-Autumn theme
+![ef-autumn](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-autumn.png)
+
 ## Ef-Trio-Light theme
 ![ef-trio-light](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-trio-light.png)
 
