@@ -1,7 +1,7 @@
 # my config for awesome window manager
 
 ## Features
-Minimal - no fancy effects, widgets  
+Minimal - no fancy effects, no fancy widgets (most of the themes are similar)  
 Modular - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 
