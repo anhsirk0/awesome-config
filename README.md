@@ -14,6 +14,9 @@ Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, Br
 ## Ef-Trio-Light theme
 ![ef-trio-light](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-trio-light.png)
 
+## Ef-Trio-Dark theme
+![ef-trio-dark](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-trio-dark.png)
+
 ## Ef-Winter theme
 ![ef-winter](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-winter.png)
 
