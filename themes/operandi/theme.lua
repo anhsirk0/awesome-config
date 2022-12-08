@@ -20,7 +20,7 @@ local wallpaper_dir = "/mnt/extras/Wallpapers/"
 local theme                                     = {}
 theme.wallpaper                                 = wallpaper_dir .. "/arch_operandi.png"
 
-theme.font                                      = "Iosevka Comfy 11"
+theme.font                                      = "Iosevka Nerd Font 11"
 theme.notification_font                         = "Iosevka 19"
 theme.notification_max_width                    = 400
 theme.taglist_font                              = theme.font
@@ -46,7 +46,7 @@ theme.purple_bright                             = "#8f0075"
 theme.accent                                    = theme.green
 
 theme.fg_normal                                 = theme.grey
-theme.fg_focus                                  = theme.accent
+theme.fg_focus                                  = theme.focus
 theme.bg_normal                                 = theme.dark
 theme.bg_focus                                  = theme.dark
 theme.fg_urgent                                 = theme.red
@@ -67,8 +67,11 @@ theme.menu_width                                = dpi(130)
 
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(4)
+theme.useless_gap                               = dpi(3)
 
+theme.notification_fg                           = theme.white
+theme.notification_bg                           = theme.grey_bright
+theme.notification_border_color                 = theme.grey_bright
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7" }
@@ -79,7 +82,7 @@ local separators = lain.util.separators
 
 -- local clockicon = wibox.widget.imagebox(theme.widget_clock)
 local clock = awful.widget.watch(
-    "date +' %d %b %a %I:%M '", 10,
+    "date +'  %d %b %a %I:%M '", 10,
     function(widget, stdout)
         widget:set_markup(" " .. markup.font(theme.font, markup(theme.white, stdout)))
     end
@@ -106,7 +109,7 @@ local bat = lain.widget.bat({
 theme.volume = lain.widget.alsa({
     --togglechannel = "IEC958,3",
     settings = function()
-        header = "   "
+        header = "  "
         vlevel  = volume_now.level
 
         if volume_now.status == "off" then

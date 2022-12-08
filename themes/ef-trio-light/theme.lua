@@ -56,7 +56,7 @@ theme.fg_urgent                                 = theme.red
 theme.bg_urgent                                 = theme.dark
 theme.border_width                              = dpi(1)
 theme.border_normal                             = theme.dark
-theme.border_focus                              = theme.purple
+theme.border_focus                              = theme.blue
 
 theme.taglist_fg_focus                          = theme.white
 theme.taglist_bg_focus                          = theme.accent
@@ -75,7 +75,6 @@ theme.useless_gap                               = dpi(3)
 theme.notification_fg                           = theme.white
 theme.notification_bg                           = theme.accent
 theme.notification_border_color                 = theme.accent
-theme.notification_border_width                 = dpi(0)
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7" }

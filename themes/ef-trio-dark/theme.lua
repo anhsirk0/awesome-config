@@ -18,7 +18,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local wallpaper_dir = "/mnt/extras/Wallpapers/"
 
 local theme                                     = {}
--- theme.wallpaper                                 = wallpaper_dir .. "red_hut.png"
+-- theme.wallpaper                                 = wallpaper_dir .. "trio-dark.png"
 theme.wallpaper                                 = "#1c1416"
 
 -- theme.font                                      = "Iosevka Comfy 11"
@@ -77,6 +77,7 @@ theme.useless_gap                               = dpi(3)
 
 theme.notification_fg                           = theme.white
 theme.notification_bg                           = theme.accent
+theme.notification_border_color                 = theme.accent
 
 theme.menubar_fg_focus                          = theme.yellow_bright
 theme.menubar_fg_normal                         = theme.white

@@ -74,6 +74,7 @@ theme.useless_gap                               = dpi(3)
 
 theme.notification_fg                           = theme.white
 theme.notification_bg                           = theme.grey_dark
+theme.notification_border_color                 = theme.grey_dark
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7" }

@@ -48,7 +48,7 @@ theme.menu_height                               = dpi(14)
 theme.menu_width                                = dpi(130)
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(4)
+theme.useless_gap                               = dpi(3)
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6"}
