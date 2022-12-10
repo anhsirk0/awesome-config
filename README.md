@@ -2,7 +2,7 @@
 
 ## Features
 Minimal - no fancy effects, no fancy widgets (most of the themes are similar)  
-Modular - Different files for keybindings, rules, rc.lua  
+Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 
 ## Ef-Spring theme
@@ -77,3 +77,7 @@ Rofi Scripts are located in ```~/.config/awesome/```.
 Newer themes are for resolution 1920x1080 while some are for 1366x768, change the font size, gaps etc etc accordingly  
 Matching themes are also avalable for Alacritty and Kakoune in my [alacritty-config](https://github.com/anhsirk0/alacritty-config) and [kakoune-themes](https://github.com/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
+
+## TODO
+Make it more modular  
+Remove unused code (if there is) from themes
