@@ -21,11 +21,14 @@ if (command -v  xfce4-power-manager && ! pgrep xfce4-power-man) ; then
     xfce4-power-manager &
 fi
 
-run nitrogen --restore
+# run nitrogen --restore
 run nm-applet
-run picom --config ~/.config/compton.conf
-xmodmap ~/.config/awesome/swap_ctrl_alt
+# run picom --config ~/.config/compton.conf
+run picom
+# xmodmap ~/.config/awesome/swap_ctrl_alt
+# kmonad ~/.config/awesome/mykmonadkeys.kbd
 bash ~/.config/awesome/cursor_speed
 xrdb -merge ~/.Xresources
 run xss-lock -- betterlockscreen -l
-emacs --daemon &
+run emacs --daemon &
+notify-send "AwesomeWM Loaded"
