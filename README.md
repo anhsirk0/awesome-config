@@ -8,6 +8,9 @@ Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, Br
 ## Ef-Spring theme
 ![ef-spring](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-spring.png)
 
+## Ef-Bio theme
+![ef-bio](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-bio.png)
+
 ## Ef-Autumn theme
 ![ef-autumn](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-autumn.png)
 
