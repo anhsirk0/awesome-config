@@ -18,7 +18,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local wallpaper_dir = "/mnt/extras/Wallpapers/"
 
 local theme                                     = {}
-theme.wallpaper                                 = wallpaper_dir .. "/arch_operandi.png"
+-- theme.wallpaper                                 = wallpaper_dir .. "/arch_operandi.png"
+theme.wallpaper = "#cfe2ff"
 
 theme.font                                      = "Iosevka Nerd Font 11"
 theme.notification_font                         = "Iosevka 19"
@@ -153,10 +154,14 @@ function theme.at_screen_connect(s)
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
-    if type(wallpaper) == "function" then
-        wallpaper = wallpaper(s)
+    -- if type(wallpaper) == "function" then
+    --     wallpaper = wallpaper(s)
+    -- end
+    if wallpaper:match("^#") then
+       gears.wallpaper.set(wallpaper, s, true)
+    else
+       gears.wallpaper.maximized(wallpaper, s, true)
     end
-    gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])

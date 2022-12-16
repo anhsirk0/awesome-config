@@ -19,7 +19,7 @@ local wallpaper_dir = "/mnt/extras/Wallpapers/"
 
 local theme                                     = {}
 -- theme.wallpaper                                 = wallpaper_dir .. "trio-dark.png"
-theme.wallpaper                                 = "#1c1416"
+theme.wallpaper                                 = "#34223f"
 
 -- theme.font                                      = "Iosevka Comfy 11"
 theme.font                                      = "Iosevka Nerd Font 11"
