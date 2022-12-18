@@ -44,7 +44,7 @@ theme.blue_bright                               = "#0000c0"
 theme.purple                                    = "#721045"
 theme.purple_bright                             = "#8f0075"
 
-theme.accent                                    = theme.green
+theme.accent                                    = "#d0d6ff"
 
 theme.fg_normal                                 = theme.grey
 theme.fg_focus                                  = theme.focus
@@ -71,8 +71,8 @@ theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = dpi(3)
 
 theme.notification_fg                           = theme.white
-theme.notification_bg                           = theme.grey_bright
-theme.notification_border_color                 = theme.grey_bright
+theme.notification_bg                           = theme.accent
+theme.notification_border_color                 = theme.accent
 
 -- awful.util.tagnames   = { "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔"}
 awful.util.tagnames   = { "1", "2", "3", "4", "5", "6", "7" }
