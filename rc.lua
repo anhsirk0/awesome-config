@@ -18,26 +18,24 @@ local dpi           = require("beautiful.xresources").apply_dpi
 globalkeys = require("myshortcuts")
 awful.rules.rules = require("myrules")
 -- {{{ Variable definitions
+-- local themes = {
+--     "gruv",          -- 1
+--     "wombat",        -- 2
+--     "aqua",          -- 3
+--     "tomorrow",      -- 4
+--     "moonlight",     -- 5
+--     "one-dark",      -- 6
+--     "warm",          -- 7
+--     "pastel",        -- 8
+--     "vivendi",       -- 9
+--     "operandi",      -- 10
+--     "ef-winter",      -- 11
+--     "ef-trio-light",      -- 12
+-- }
 
-local themes = {
-    "gruv",          -- 1
-    "wombat",        -- 2
-    "aqua",          -- 3
-    "tomorrow",      -- 4
-    "moonlight",     -- 5
-    "tokyo-night",   -- 6
-    "one-dark",      -- 7
-    "warm",          -- 8
-    "pastel",        -- 9
-}
-
-local chosen_theme = themes[5]
-local modkey       = "Mod4"
-local altkey       = "Mod1"
+local chosen_theme = "operandi"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true -- cycle trough all previous client or just the first -- https://github.com/lcpz/awesome-copycats/issues/274
-local editor       = os.getenv("EDITOR") or "kak"
-local browser      = os.getenv("BROWSER") or "brave"
 
 awful.util.terminal = terminal
 -- awful.util.tagnames = { "1", "2", "3", "4", "5" }
@@ -80,15 +78,6 @@ lain.layout.cascade.tile.ncol          = 2
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- }}}
 
--- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-
 -- {{{ Helper functions
 local function client_menu_toggle_fn()
     local instance = nil
@@ -102,10 +91,6 @@ local function client_menu_toggle_fn()
     end
 end
 -- }}}
-
-darkblue    = beautiful.bg_focus
-blue        = "#9EBABA"
-red         = "#EB8F8F"
 
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
 
