@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $config = "$ENV{HOME}/.config/awesome/rofi/helper/config.rasi";
+# my $config = "$ENV{HOME}/.config/awesome/rofi/helper/config.rasi";
 
 chomp(my $current_brightness = `xbacklight -get`);
 
@@ -10,8 +10,9 @@ push(@options, "Blugon"); # Blue light filter
 
 my $joined_options = join "\n", @options;
 my $prompt = "Control brightness ($current_brightness)";
-my $rofi_args = qq{-config $config -p "$prompt"};
-chomp(my $chosen = `echo "$joined_options" | rofi -dmenu -i $rofi_args`);
+# my $rofi_args = qq{-dmenu -config $config -p "$prompt" -i};
+# chomp(my $chosen = `echo "$joined_options" | rofi $rofi_args`);
+chomp(my $chosen = `echo "$joined_options" | dmenu -l 20 -p '$prompt'`);
 
 unless ($chosen) { exit };
 

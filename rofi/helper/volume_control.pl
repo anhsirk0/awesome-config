@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $config = "$ENV{HOME}/.config/awesome/rofi/helper/config.rasi";
+# my $config = "$ENV{HOME}/.config/awesome/rofi/helper/config.rasi";
 
 my $current_volume = `amixer sget Master`;
 ($current_volume) = $current_volume =~ /\[(\d+)%\]/;
@@ -10,8 +10,9 @@ unshift(@options, ("Toggle mute", "Inc volume 10%", "Dec volume 10%"));
 
 my $joined_options = join "\n", @options;
 my $prompt = "Control volume ($current_volume)";
-my $rofi_args = qq{-config $config -p "$prompt"};
-chomp(my $chosen = `echo "$joined_options" | rofi -dmenu -i $rofi_args`);
+# my $rofi_args = qq{-dmenu -i -config $config -p "$prompt"};
+# chomp(my $chosen = `echo "$joined_options" | rofi $rofi_args`);
+chomp(my $chosen = `echo "$joined_options" | dmenu -l 20 -p '$prompt'`);
 
 unless ($chosen) { exit };
 

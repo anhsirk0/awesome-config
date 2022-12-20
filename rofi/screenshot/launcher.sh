@@ -12,11 +12,11 @@ if [ ! -z "$chosen" ] ; then
     sleep 1
     case $action in
         a*)
-            $scripts_dir/area_screenshot $name ;;
+            $scripts_dir/area-screenshot $name ;;
         w*)
-            $scripts_dir/window_screenshot $name ;;
+            $scripts_dir/window-screenshot $name ;;
         *)
-            bash /$scripts_dir/full_screenshot $name ;;
+            bash /$scripts_dir/full-screenshot $name ;;
     esac
 fi
 

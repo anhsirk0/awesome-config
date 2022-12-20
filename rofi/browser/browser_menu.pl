@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-my $browser = $ENV{BROWSER} || "brave";
+my $browser = "brave";
 my $config = "$ENV{HOME}/.config/awesome/rofi/browser/config.rasi";
 
 # for web dev reasons
@@ -17,8 +17,12 @@ my @options = (
     "fm6000 -> github.com/anhsirk0/fetch-master-6000",
     "network 3000 -> http://" . $local_ip . ":3000",
     "network 4000 -> http://" . $local_ip . ":4000",
+    "network 8000 -> http://" . $local_ip . ":8000",
     "3000 -> http://localhost:3000",
     "4000 -> http://localhost:4000",
+    "Admin-git -> github.com/highcurrent-ai/uns-admin",
+    "UNS-git -> github.com/highcurrent-ai/uns-main",
+    "WhatsApp web -> web.whatsapp.com"
     );
 
 my $joined_options = join "\n", map { (split " -> ", $_)[0] } @options;
@@ -55,6 +59,7 @@ if ($url) {
     $message = qq{Opening "$query"};
 } else {# if not a bookmark or a bang search, then search on ddg;
     $url = "duckduckgo.com/?q=$chosen";
+    # $url = "ecosia.org/search?q=$chosen";
     $message = qq{Searching duckduckgo for "$chosen"};
 }
 
