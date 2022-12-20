@@ -2,6 +2,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local naughty = require("naughty")
+local lain          = require("lain")
 
 local menubar = require("menubar")
 
@@ -53,11 +54,22 @@ function spawn_and_notify(command, message, message_cmd)
    end
 end
 
+my_dropdown = lain.util.quake({
+  app = "alacritty",
+  argname = '--class %s',
+  name = 'dropdown_terminal',
+  height = 0.5,
+  followtag = true,
+  visible = false
+})
+
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
    -- awful.key({ modkey,             }, "/",        hotkeys_popup.show_help,
    --             {description="show help", group="awesome"}),
 
+   awful.key({}, "F12", nil, function () my_dropdown:toggle() end),
+   
    awful.key({ modkey, }, "Left",
       function()
          awful.client.focus.bydirection("left")
