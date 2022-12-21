@@ -10,8 +10,8 @@ local dpi       = require("beautiful.xresources").apply_dpi
                   require("awful.autofocus")
 -- }}}
 
-globalkeys = require("myshortcuts")
-awful.rules.rules = require("myrules")
+globalkeys = require("keys.keys")
+awful.rules.rules = require("rules.rules")
 
 awful.util.terminal = terminal
 awful.layout.layouts = {
@@ -50,7 +50,7 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 -- for new themes
-beautiful.init(string.format("%s/.config/awesome/themes/main.lua", os.getenv("HOME")))
+beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME")))
 
 -- -- Use this for old-themes
 -- local chosen_theme = "operandi"
@@ -177,5 +177,5 @@ beautiful.gap_single_client = false
 --    end
 --end)
 
-awful.spawn("/home/krishna/.config/awesome/autorun.sh")
+awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/autorun.sh")
 
