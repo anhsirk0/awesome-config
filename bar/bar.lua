@@ -13,7 +13,7 @@ local bar = function(s, theme)
    local clock = awful.widget.watch(
       "date +'  %d %b %a %I:%M '", 10,
       function(widget, stdout)
-         widget:set_markup(markup.font(theme.font, markup(theme.white, stdout)))
+         widget:set_markup(markup.font(theme.font, markup(theme.fg_main, stdout)))
       end
    )
 
@@ -27,7 +27,7 @@ local bar = function(s, theme)
             end
             bat_p = " " .. bat_now.perc
             widget:set_markup(
-               markup.font(theme.font, markup(theme.white, bat_p .. bat_header))
+               markup.font(theme.font, markup(theme.fg_main, bat_p .. bat_header))
             )
          end
    })
@@ -44,7 +44,7 @@ local bar = function(s, theme)
             end
 
             widget:set_markup(
-               markup.font(theme.font, markup(theme.white, header .. vlevel))
+               markup.font(theme.font, markup(theme.fg_main, header .. vlevel))
             )
          end
    })
