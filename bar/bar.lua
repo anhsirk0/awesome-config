@@ -71,12 +71,13 @@ local bar = function(s, theme)
    )
 
    -- Create the wibox
-   local mywibar = awful.wibar({
+   -- Name is later used to toggle the bar visiblity
+   s.mywibar = awful.wibar({
          position = "bottom", screen = s, height = barheight, bg = theme.barcolor
    })
 
    -- Add widgets to the wibox
-   mywibar:setup {
+   s.mywibar:setup {
       layout = wibox.layout.align.horizontal,
       { -- Left widgets
          layout = wibox.layout.fixed.horizontal,

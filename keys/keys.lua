@@ -354,10 +354,8 @@ local globalkeys = gears.table.join(
    -- Show/Hide Wibox
    awful.key({ modkey }, "g", function ()
          for s in screen do
-            s.mywibox.visible = not s.mywibox.visible
-            if s.mybottomwibox then
-               s.mybottomwibox.visible = not s.mybottomwibox.visible
-            end
+            -- set the name in the bar.lua
+            s.mywibar.visible = not s.mywibar.visible
          end
    end,
       {description = "toggle wibox", group = "awesome"}),
