@@ -6,25 +6,30 @@
 -- ███████╗██║         ╚███╔███╔╝██║██║ ╚████║   ██║   ███████╗██║  ██║
 -- ╚══════╝╚═╝          ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 
-local colors                                     = {}
+local colors         = {}
 
-colors.wallpaper = "#003045"
-colors.white                                     = "#b8c6d5"
-colors.dark                                      = "#0f0b15"
-colors.darker                                    = "#0f0b15"
-colors.transparent                               = "#E6000000"
-colors.black                                     = colors.dark
-colors.grey_dark                                 = "#342464"
-colors.grey                                      = "#5f509f"
-colors.red                                       = "#ef6560"
-colors.orange                                    = "#c48052"
-colors.green                                     = "#6aad0f"
-colors.green_bright                              = "#29a444"
-colors.yellow                                    = "#df9080"
-colors.blue                                      = "#6a9fff"
-colors.blue_bright                               = "#3f95f6"
-colors.purple                                    = "#d369af"
-colors.purple_bright                             = "#e580e0"
-colors.accent                                    = colors.purple
+colors.wallpaper     = "#003045"
+colors.bg_main       = "#0f0b15"
+colors.fg_main       = "#b8c6d5"
+colors.bg_dim        = "#161926"
+colors.fg_dim        = "#807c9f"
+colors.bg_alt        = "#202234"
+colors.fg_alt        = "#bf8f8f"
+colors.bg_active     = "#353554"
+colors.bg_inactive   = "#14121a"
+
+colors.red           = "#ef6560"
+colors.orange        = "#c48052"
+colors.green         = "#6aad0f"
+colors.green_bright  = "#29a444"
+colors.yellow        = "#df9080"
+colors.blue          = "#6a9fff"
+colors.blue_bright   = "#3f95f6"
+colors.purple        = "#d369af"
+colors.purple_bright = "#e580e0"
+colors.bg_accent     = "#5f1f5f"
+colors.fg_accent     = "#dedeff"
+colors.bg_accent_alt = "#ffb250"
+colors.fg_accent_alt = "#000000"
 
 return colors
