@@ -56,18 +56,18 @@ Work In progess
 ![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes2.png)
 
 ## change-theme.pl
-use `change-theme.pl` to change the themes (fzf optionally required)
+use `scripts/change-theme.pl` to change the themes (fzf optionally required)
 ```bash
-$ ~/.config/awesome/change-theme.pl 
+$ ~/.config/awesome/scripts/change-theme.pl 
 ```
 > This will use fzf to select a theme (from ~/.config/awesome/themes) interactively (fzf)
 ```bash
-$ ~/.config/awesome/change-theme.pl viv
+$ ~/.config/awesome/scripts/change-theme.pl viv
 'vivendi' theme selected
 ```
 > This will change theme to the first theme that has viv in its name
 ```bash
-$ ~/.config/awesome/change-theme.pl gruv
+$ ~/.config/awesome/scripts/change-theme.pl gruv
 'gruv' theme selected
 ```
 > This will change theme to the first theme that has gruv in its name, like gruvbox
@@ -82,5 +82,6 @@ Matching themes are also avalable for Alacritty and Kakoune in my [alacritty-con
 modified from awesome-copycats
 
 ## TODO
-Make it more modular  
-Remove unused code (if there is) from themes
+ - [ ] Update rofi  
+ - [X] Make it more modular  
+ - [X] Remove unused code (if there is) from themes
