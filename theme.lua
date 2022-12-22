@@ -6,8 +6,8 @@ local dpi           = require("beautiful.xresources").apply_dpi
 local bar           = require("bar.bar")
 
 -- For changing themes
-local chosen_theme  = "ef-bio"
-local colors        = require("themes." .. "ef-bio" .. ".colors")
+local chosen_theme = "ef-trio-light"
+local colors        = require("themes." .. chosen_theme .. ".colors")
 
 local theme                                     = colors
 theme.font                                      = "Iosevka Nerd Font 11"
