@@ -29,7 +29,7 @@ colors.purple        = "#d369af"
 colors.purple_bright = "#e580e0"
 colors.bg_accent     = "#5f1f5f"
 colors.fg_accent     = "#dedeff"
-colors.bg_accent_alt = "#ffb250"
+colors.bg_accent_alt = "#ff6ff0" -- cursor
 colors.fg_accent_alt = "#000000"
 
 return colors
