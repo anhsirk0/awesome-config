@@ -6,22 +6,22 @@ local dpi           = require("beautiful.xresources").apply_dpi
 local bar           = require("bar.bar")
 
 -- For changing themes
-local chosen_theme = "ef-autumn"
+local chosen_theme = "ef-winter"
 local colors        = require("themes." .. chosen_theme .. ".colors")
 
 local theme                                     = colors
-theme.font                                      = "Iosevka Nerd Font 11"
+theme.font                                      = "Iosevka Nerd Font 10"
 theme.taglist_font                              = theme.font
 
-theme.notification_font                         = "Iosevka 19"
+theme.notification_font                         = "Iosevka Comfy 19"
 theme.notification_max_width                    = 400
 
--- theme.fg_normal                                 = theme.fg_dim
--- theme.fg_focus                                  = theme.fb_main
--- theme.bg_normal                                 = theme.black
--- theme.bg_focus                                  = theme.black
--- theme.fg_urgent                                 = theme.red
--- theme.bg_urgent                                 = theme.black
+theme.fg_normal                                 = theme.fg_dim
+theme.fg_focus                                  = theme.fb_main
+theme.bg_normal                                 = theme.bg_dim
+theme.bg_focus                                  = theme.bg_main
+theme.fg_urgent                                 = theme.red
+theme.bg_urgent                                 = theme.black
 theme.border_normal                             = theme.bg_main
 theme.border_focus                              = theme.bg_accent_alt
 
@@ -44,7 +44,8 @@ theme.notification_fg                           = theme.fg_accent
 theme.notification_bg                           = theme.bg_accent
 theme.notification_border_color                 = theme.bg_accent
 
-theme.menubar_fg_focus                          = theme.fg_alt
+theme.menubar_fg_focus                          = theme.fg_alt_alt
+theme.menubar_bg_focus                         = theme.bg_accent_alt
 theme.menubar_fg_normal                         = theme.fg_main
 theme.menubar_bg_normal                         = theme.bg_main
 
