@@ -27,7 +27,7 @@ local private_browser = browser .. " --incognito"
 
 local telegram = home .. "/.local/bin/telegram"
 -- local telegram = "telegram-desktop"
-local rofi_dir = home .. "/.config/awesome/rofi/"
+local rofi_dir = home .. "/.config/rofi/"
 local scripts_dir = home .. "/.config/myshell/scripts/"
 local lockscreen = "betterlockscreen -l"
 
@@ -247,7 +247,10 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, }, "/", function () awful.spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
       {description = "Wifi rofi launcher", group = "launcher"}),
 
-   awful.key({ modkey, altkey }, "e", function () awful.spawn(rofi_dir .. "emoji/emoji.pl") end,
+   -- awful.key({ modkey, altkey }, "e", function () awful.spawn(rofi_dir .. "emoji/emoji.pl") end,
+   --    {description = "Emoji rofi launcher", group = "launcher"}),
+
+   awful.key({ modkey, altkey }, "e", function () awful.spawn("rofi -show emoji") end,
       {description = "Emoji rofi launcher", group = "launcher"}),
 
    awful.key({ modkey, altkey }, "p", function () awful.spawn("rofi -show calc -modi calc -no-show-match -no-sort") end,
