@@ -4,6 +4,7 @@
 Minimal - no fancy effects, no fancy widgets (most of the themes are similar)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
+Rofi Scripts moved to its own [repo](https://github.com/anhsirk0/rofi-config)  
 
 ## Ef-Spring theme
 ![ef-spring](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-spring.png)
@@ -81,7 +82,6 @@ Newer themes are for resolution 1920x1080 while some are for 1366x768, change th
 Matching themes are also avalable for Alacritty and Kakoune in my [alacritty-config](https://github.com/anhsirk0/alacritty-config) and [kakoune-themes](https://github.com/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
 
-## TODO
- - [ ] Update rofi  
- - [X] Make it more modular  
- - [X] Remove unused code (if there is) from themes
+## Thanks
+Modus themes - https://protesilaos.com/emacs/modus-themes-colors  
+Ef themes - https://protesilaos.com/emacs/ef-themes  
