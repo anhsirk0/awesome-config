@@ -7,7 +7,7 @@
 -- ╚══════╝╚═╝         ╚═════╝ ╚═╝ ╚═════╝
 
 local colors         = {}
-colors.wallpaper     = "#303230"
+colors.wallpaper     = "#222522"
 colors.bg_main       = "#111111"
 colors.fg_main       = "#cfdfd5"
 colors.bg_dim        = "#222522"
