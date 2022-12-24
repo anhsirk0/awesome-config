@@ -6,7 +6,7 @@ local dpi                       = require("beautiful.xresources").apply_dpi
 local bar                       = require("bar.bar")
 
 -- For changing themes
-local chosen_theme = "ef-spring"
+local chosen_theme = "ef-bio"
 local colors                    = require("themes." .. chosen_theme .. ".colors")
 
 local theme                     = colors
@@ -23,7 +23,7 @@ theme.bg_focus                  = theme.bg_main
 theme.fg_urgent                 = theme.red
 theme.bg_urgent                 = theme.black
 theme.border_normal             = theme.bg_main
-theme.border_focus              = theme.bg_accent
+theme.border_focus              = theme.bg_accent_alt
 
 theme.taglist_fg_focus          = theme.fg_main
 theme.taglist_bg_focus          = theme.bg_active
@@ -31,8 +31,9 @@ theme.taglist_fg_occupied       = theme.fg_dim
 theme.taglist_fg_empty          = theme.bg_active
 theme.taglist_fg_urgent         = theme.red
 
+theme.barcolor                  = theme.bg_main
 theme.bg_systray                = theme.bg_main
-theme.border_width              = dpi(1)
+theme.border_width              = dpi(2)
 theme.useless_gap               = dpi(3)
 
 theme.tasklist_plain_task_name  = true
@@ -42,13 +43,11 @@ theme.notification_fg           = theme.fg_accent_alt
 theme.notification_bg           = theme.bg_accent_alt
 theme.notification_border_color = theme.bg_accent_alt
 
-theme.menubar_height            = dpi(22)
-theme.menubar_fg_focus          = theme.fg_alt_alt
+theme.menubar_fg_focus          = theme.fg_accent_alt
 theme.menubar_bg_focus          = theme.bg_accent_alt
-theme.menubar_fg_normal         = theme.fg_main
-theme.menubar_bg_normal         = theme.bg_main
+theme.menubar_fg_normal         = theme.fg_dim
+theme.menubar_bg_normal         = theme.bg_dim
 
-theme.barcolor                  = theme.bg_main
 awful.util.tagnames             = { "1", "2", "3", "4", "5", "6", "7" }
 
 function theme.at_screen_connect(s)
