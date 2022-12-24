@@ -30,10 +30,10 @@ colors.blue_alt      = "#0000c0"
 colors.purple        = "#721045"
 colors.purple_alt    = "#8f0075"
 
--- reversed accent & accent_alt because theme is light
-colors.bg_accent     = "#d0d6ff"
+-- reversed accent_alt & accent_alt because theme is light
+colors.bg_accent_alt = "#d0d6ff"
+colors.fg_accent_alt = colors.fg_main
 colors.fg_accent     = colors.fg_active
-colors.bg_accent_alt = colors.blue
-colors.fg_accent_alt = colors.fg_alt
+colors.bg_accent     = colors.blue
 
 return colors

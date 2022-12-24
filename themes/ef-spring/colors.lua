@@ -29,7 +29,6 @@ colors.blue_alt      = "#265fbf"
 colors.purple        = "#d5206f"
 colors.purple_alt    = "#9435b4"
 
--- reversed accent & accent_alt because theme is light
 colors.bg_accent     = "#90e8b0"
 colors.fg_accent     = "#243228"
 colors.bg_accent_alt = "#880044"

@@ -8,7 +8,7 @@
 
 local colors         = {}
 
-colors.wallpaper     = "#002a4f"
+colors.wallpaper     = "#282e46"
 colors.bg_main       = "#000000"
 colors.fg_main       = "#ffffff"
 colors.bg_dim        = "#100f10"
@@ -30,9 +30,9 @@ colors.blue_alt      = "#79a8ff"
 colors.purple        = "#feacd0"
 colors.purple_alt    = "#f78fe7"
 
-colors.bg_accent     = "#2a2a66"
-colors.fg_accent     = colors.fg_active
-colors.bg_accent_alt = colors.green_alt
+colors.bg_accent_alt = "#2a2a66"
 colors.fg_accent_alt = colors.fg_active
+colors.bg_accent     = colors.green_alt
+colors.fg_accent     = colors.fg_active
 
 return colors

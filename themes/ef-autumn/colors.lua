@@ -28,9 +28,9 @@ colors.blue          = "#379cf6"
 colors.blue_bright   = "#6a88ff"
 colors.purple        = "#d570af"
 colors.purple_bright = "#e580ea"
-colors.bg_accent     = "#692a12"
-colors.fg_accent     = "#feeeca"
-colors.bg_accent_alt = "#ffa200"
-colors.fg_accent_alt = "#000000"
+colors.bg_accent_alt = "#692a12"
+colors.fg_accent_alt = "#feeeca"
+colors.bg_accent     = "#ffa200"
+colors.fg_accent     = "#000000"
 
 return colors

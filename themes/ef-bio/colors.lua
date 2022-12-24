@@ -28,9 +28,9 @@ colors.yellow_alt    = "#cfc04f"
 colors.blue_alt      = "#32cfef"
 colors.magenta_alt   = "#af9fff"
 colors.cyan_alt      = "#5dc0aa"
-colors.bg_accent     = "#00552f"
-colors.fg_accent     = "#d0ffe0"
-colors.bg_accent_alt = "#b59ffa"
-colors.fg_accent_alt = "#000000"
+colors.bg_accent_alt = "#00552f"
+colors.fg_accent_alt = "#d0ffe0"
+colors.bg_accent     = "#b59ffa"
+colors.fg_accent     = "#000000"
 
 return colors
