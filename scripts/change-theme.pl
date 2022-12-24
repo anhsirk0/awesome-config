@@ -25,6 +25,7 @@ unless($theme) {
 }
 
 if ($theme) {
+    # read config
     open(FH, '<' . $config) or die "Unable to open\n";
     while(<FH>) {
         if ($_ =~ /^local chosen_theme/) {
@@ -33,8 +34,11 @@ if ($theme) {
         }
         $config_content .= $_;
     }
+    close(FH);
+    # write config
     open(FH, '>' . $config) or die "Unable to open\n";
     print FH $config_content;
+    close(FH);
 } else {
     print "No theme selected\n";
 }
