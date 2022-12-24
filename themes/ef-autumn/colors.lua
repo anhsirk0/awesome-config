@@ -8,7 +8,7 @@
 
 local colors         = {}
 
-colors.wallpaper     = "#302a3a"
+colors.wallpaper     = "#1f1b19"
 colors.bg_main       = "#0f0e06"
 colors.fg_main       = "#cfbcba"
 colors.bg_dim        = "#1f1b19"
