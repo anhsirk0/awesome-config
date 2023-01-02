@@ -6,12 +6,20 @@ local dpi    = require("beautiful.xresources").apply_dpi
 local markup = lain.util.markup
 
 local bar = function(s, theme)
-   local barheight = dpi(24)
+   local barheight = dpi(22)
    local separator = wibox.container.margin(
-      wibox.widget.textbox(" "), dpi(3), dpi(3)
+      wibox.widget{
+         markup  = '|',
+         align   = 'center',
+         valign  = 'center',
+         opacity = 0.3,
+         widget  = wibox.widget.textbox
+      }
+      , dpi(6), dpi(6)
    )
    local clock = awful.widget.watch(
-      "date +'  %d %b %a %I:%M '", 10,
+      -- "date +'  %d %b %a %I:%M '", 10,
+      "date +'%d %b %a %I:%M '", 10,
       function(widget, stdout)
          widget:set_markup(markup.font(theme.font, markup(theme.fg_main, stdout)))
       end
@@ -25,7 +33,8 @@ local bar = function(s, theme)
             else
                bat_header = ""
             end
-            bat_p = " " .. bat_now.perc
+            -- bat_p = " " .. bat_now.perc
+            bat_p = "B " .. bat_now.perc
             widget:set_markup(
                markup.font(theme.font, markup(theme.fg_main, bat_p .. bat_header))
             )
@@ -34,7 +43,8 @@ local bar = function(s, theme)
 
    local volume = lain.widget.alsa({
          settings = function()
-            header = "  "
+            -- header = "   "
+            header = "V "
             vlevel = volume_now.level
 
             if volume_now.status == "off" then
@@ -87,6 +97,7 @@ local bar = function(s, theme)
       { -- Right widgets
          layout = wibox.layout.fixed.horizontal,
          wibox.widget.systray(),
+         separator,
          volume,
          separator,
          battery,
