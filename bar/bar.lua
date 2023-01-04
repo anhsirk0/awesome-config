@@ -17,14 +17,9 @@ local bar = function(s, theme)
       }
       , dpi(6), dpi(6)
    )
-   local clock = awful.widget.watch(
-      -- "date +'  %d %b %a %I:%M '", 10,
-      "date +'%d %b %a %I:%M '", 10,
-      function(widget, stdout)
-         widget:set_markup(markup.font(theme.font, markup(theme.fg_main, stdout)))
-      end
-   )
 
+   local clock = wibox.widget.textclock('%d %b %a, %I:%M ')
+   
    local battery = lain.widget.bat({
          settings = function()
             if bat_now.ac_status == 1 then
