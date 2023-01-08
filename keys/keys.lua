@@ -30,8 +30,8 @@ local rofi_dir        = home .. "/.config/rofi/"
 local scripts_dir     = home .. "/.config/myshell/scripts/"
 local lockscreen      = "betterlockscreen -l"
 
-local get_brightness  = "xbacklight -get"
-local volume      = scripts_dir .. "/volume" -- github.com/anhsirk0/volume
+local get_brightness = "xbacklight -get"
+local volume         = scripts_dir .. "/volume" -- github.com/anhsirk0/volume
 
 menubar.show_categories = false
 
