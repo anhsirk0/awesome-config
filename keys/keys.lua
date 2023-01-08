@@ -68,8 +68,9 @@ local globalkeys = gears.table.join(
    -- awful.key({ modkey,             }, "/",        hotkeys_popup.show_help,
    --             {description="show help", group="awesome"}),
 
-   awful.key({}, "F12", nil, function () my_dropdown:toggle() end),
-   
+   awful.key({}, "F12", nil,
+      function () my_dropdown:toggle() end),
+
    awful.key({ modkey, }, "Left",
       function() awful.client.focus.bydirection("left") end,
       {description = "view previous", group = "client"}),
