@@ -9,6 +9,9 @@ Rofi Scripts moved to its own [repo](https://github.com/anhsirk0/rofi-config)
 ## Ef-Spring theme
 ![ef-spring](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-spring.png)
 
+## Ef-Summer theme
+![ef-summer](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-summer.png)
+
 ## Ef-Bio theme
 ![ef-bio](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-bio.png)
 
