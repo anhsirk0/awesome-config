@@ -401,10 +401,16 @@ local globalkeys = gears.table.join(
       function () spawn(rofi_dir .. "screenshot/launcher.sh") end,
       {description = "screenshot rofi menu", group = "screenshot"}),
 
-   awful.key({ modkey }, "-", function () spawn(lockscreen) end,
-      {description = "Lockscreen", group = "launcher"}),
+   awful.key({ modkey }, "=",
+      function () spawn(rofi_dir .. "theme-change/theme-change.sh") end,
+      {description = "rofi menu for switching themes", group = "launcher"}),
 
-   awful.key({ modkey, "Shift" }, "c", function (c) spawn("xkill") end,
+   awful.key({ modkey }, "-",
+      function () spawn(rofi_dir .. "powermenu/powermenu.sh") end,
+      {description = "powermenu rofi menu", group = "launcher"}),
+
+   awful.key({ modkey, "Shift" }, "c",
+      function (c) spawn("xkill") end,
       {description = "xkill", group = "launcher"}),
 
    -- Finer control over brightness and volume via Ctrl-Alt keybindings
