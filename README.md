@@ -9,6 +9,9 @@ Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, Br
 Rofi Scripts moved to its own [repo](https://github.com/anhsirk0/rofi-config)  
 
 ## Screenshots
+### Ef-Cherie theme
+![ef-cherie](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-cherie.png)
+
 ### Ef-Spring theme
 ![ef-spring](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-spring.png)
 
