@@ -1,0 +1,48 @@
+! Swap ctrl alt and numlock keys
+
+! here's the default setting on special keys
+!  xmodmap -pke | grep -P '(Control|Super|Alt|Menu|Caps)'
+
+! keycode  37 = Control_L NoSymbol Control_L NoSymbol Control_L
+! keycode  64 = Alt_L Meta_L Alt_L Meta_L Alt_L Meta_L
+! keycode  66 = Caps_Lock NoSymbol Caps_Lock NoSymbol Caps_Lock
+! keycode 105 = Control_R NoSymbol Control_R NoSymbol Control_R
+! keycode 108 = Alt_R Meta_R Alt_R Meta_R Alt_R Meta_R
+! keycode 133 = Super_L NoSymbol Super_L NoSymbol Super_L
+! keycode 134 = Super_R NoSymbol Super_R NoSymbol Super_R
+! keycode 135 = Menu NoSymbol Menu NoSymbol Menu
+! keycode 147 = XF86MenuKB NoSymbol XF86MenuKB NoSymbol XF86MenuKB
+! keycode 204 = NoSymbol Alt_L NoSymbol Alt_L NoSymbol Alt_L
+! keycode 206 = NoSymbol Super_L NoSymbol Super_L NoSymbol Super_L
+
+clear control
+clear mod1
+keycode 37 = Alt_L Meta_L
+keycode 105 = Alt_R Meta_R
+keycode 64 = Control_L
+keycode 108 = Control_R
+add control = Control_L Control_R
+add mod1 = Alt_L Meta_L
+
+! Caps_Lock as Escape
+keycode 66 = Caps_Lock
+keycode 9 = Escape
+remove Lock = Caps_Lock
+add Lock = Escape
+keycode 9 = Caps_Lock
+keycode 66 = Escape
+
+! numpad keys
+keycode 79 = 7
+keycode 80 = 8
+keycode 81 = 9
+keycode 83 = 4
+keycode 84 = 5
+keycode 85 = 6
+keycode 87 = 1
+keycode 88 = 2
+keycode 89 = 3
+keycode 90 = 0
+keycode 86 = plus
+keycode 82 = minus
+keycode 91 = period
