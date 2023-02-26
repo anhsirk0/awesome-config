@@ -246,19 +246,19 @@ local globalkeys = gears.table.join(
       {description = "launch xdm", group = "launcher"}),
 
    awful.key({ modkey, }, "x",
-      function () spawn("lollypop -t") end,
-      {description = "toggle play / launch lollypop", group = "lollypop"}),
+      function () spawn("quodlibet --play-pause --run") end,
+      {description = "toggle play / launch quodlibet", group = "quodlibet"}),
 
    awful.key({ modkey, }, ".",
-      function () spawn("lollypop -n") end,
-      {description = "play next", group = "lollypop"}),
+      function () spawn("quodlibet --next --run") end,
+      {description = "play next", group = "quodlibet"}),
 
    awful.key({ modkey, }, ",",
-      function () spawn("lollypop -p") end,
-      {description = "play previous", group = "lollypop"}),
+      function () spawn("quodlibet --previous --run") end,
+      {description = "play previous", group = "quodlibet"}),
 
    awful.key({ modkey, }, "s",
-      function () spawn(rofi_dir .. "lollypop/launcher.pl") end,
+      function () spawn(rofi_dir .. "quodlibet/launcher.pl") end,
       {description = "Add song to playlist", group = "launcher"}),
 
    awful.key({ modkey, }, "o",
