@@ -20,6 +20,7 @@ local terminal        = "alacritty"
 local editor          = "micro"
 local gui_editor      = "mousepad"
 local file_manager    = "nemo"
+local color_picker    = "gcolor3"
 
 -- local browser         = "firefox"
 -- local private_browser = browser .. " --private-window"
@@ -31,7 +32,7 @@ local scripts_dir     = home .. "/.config/myshell/scripts/"
 local lockscreen      = "betterlockscreen -l"
 
 local get_brightness = "xbacklight -get"
-local volume         = scripts_dir .. "/volume" -- github.com/anhsirk0/volume
+local volume         = scripts_dir .. "/volume" -- codeberg.org/anhsirk0/volume
 
 menubar.show_categories = false
 
@@ -257,6 +258,14 @@ local globalkeys = gears.table.join(
       function () spawn("quodlibet --previous --run") end,
       {description = "play previous", group = "quodlibet"}),
 
+   awful.key({ modkey, altkey }, ".",
+      function () spawn("quodlibet --seek=-00:10") end,
+      {description = "Seek -10 seconds", group = "quodlibet"}),
+
+   awful.key({ modkey, altkey }, ",",
+      function () spawn("quodlibet --seek=00:10") end,
+      {description = "Seek 10 seconds", group = "quodlibet"}),
+
    awful.key({ modkey, }, "s",
       function () spawn(rofi_dir .. "quodlibet/launcher.pl") end,
       {description = "Add song to playlist", group = "launcher"}),
@@ -299,7 +308,7 @@ local globalkeys = gears.table.join(
       {description = "Browser menu ", group = "launcher"}),
 
    awful.key({ modkey, }, "'",
-      function () spawn("gcolor3") end,
+      function () spawn(color_picker) end,
       {description = "Launch Color Picker", group = "launcher"}),
 
    awful.key({ modkey, }, "p", function () spawn("zathura") end,
