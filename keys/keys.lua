@@ -259,12 +259,12 @@ local globalkeys = gears.table.join(
       {description = "play previous", group = "quodlibet"}),
 
    awful.key({ modkey, altkey }, ".",
-      function () spawn("quodlibet --seek=-00:10") end,
-      {description = "Seek -10 seconds", group = "quodlibet"}),
+      function () spawn("quodlibet --seek=+00:10") end,
+      {description = "Seek 10 seconds", group = "quodlibet"}),
 
    awful.key({ modkey, altkey }, ",",
-      function () spawn("quodlibet --seek=00:10") end,
-      {description = "Seek 10 seconds", group = "quodlibet"}),
+      function () spawn("quodlibet --seek=-00:10") end,
+      {description = "Seek -10 seconds", group = "quodlibet"}),
 
    awful.key({ modkey, }, "s",
       function () spawn(rofi_dir .. "quodlibet/launcher.pl") end,
