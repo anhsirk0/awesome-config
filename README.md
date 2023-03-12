@@ -6,64 +6,64 @@ Old themes will no longer be maintained
 Very Minimal - no fancy effects, no fancy widgets, not even icons (all the themes follow same pattern)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
-Rofi Scripts moved to its own [repo](https://github.com/anhsirk0/rofi-config)  
+Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 
 ## Screenshots
 ### Ef-Cherie theme
-![ef-cherie](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-cherie.png)
+![ef-cherie.png](https://i.postimg.cc/1tR0GwsQ/ef-cherie.png)
 
 ### Ef-Spring theme
-![ef-spring](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-spring.png)
+![ef-spring.png](https://i.postimg.cc/ZqxFvVkH/ef-spring.png)
 
 ### Ef-Summer theme
-![ef-summer](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-summer.png)
+![ef-summer.png](https://i.postimg.cc/QdWfCQxY/ef-summer.png)
 
 ### Ef-Bio theme
-![ef-bio](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-bio.png)
+![ef-bio.png](https://i.postimg.cc/bJ6x3rw2/ef-bio.png)
 
 ### Ef-Autumn theme
-![ef-autumn](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-autumn.png)
+![ef-autumn.png](https://i.postimg.cc/TwPmLxJ2/ef-autumn.png)
 
 ### Ef-Trio-Light theme
-![ef-trio-light](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-trio-light.png)
+![ef-trio-light.png](https://i.postimg.cc/TY17MM86/ef-trio-light.png)
 
 ### Ef-Trio-Dark theme
-![ef-trio-dark](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-trio-dark.png)
+![ef-trio-dark.png](https://i.postimg.cc/PJ3SpKw9/ef-trio-dark.png)
 
 ### Ef-Winter theme
-![ef-winter](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/ef-winter.png)
+![ef-winter.png](https://i.postimg.cc/XNQHzNzL/ef-winter.png)
 
 ### Operandi theme
-![operandi](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/operandi.png)
+![operandi.png](https://i.postimg.cc/W1tQnqp0/operandi.png)
 
 ### Vivendi theme
-![vivendi](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/vivendi.png)
+![vivendi.png](https://i.postimg.cc/y852r6Wt/vivendi.png)
 
 ## Following themes are now part of `old_themes`
 ### Moonlight theme
-![moonlight](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/moonlight.png)
+![moonlight.png](https://i.postimg.cc/bJqgm404/moonlight.png)
 
 ### Aqua theme
-![aqua](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/aqua.png)
+![aqua.png](https://i.postimg.cc/654rf9Jy/aqua.png)
 
 ### Pastel theme
-![pastel](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/pastel1.png)
-![pastel](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/pastel2.png)
+![pastel1.png](https://i.postimg.cc/Tw8Mh26g/pastel1.png)
+![pastel2.png](https://i.postimg.cc/SQfFNptY/pastel2.png)
 
 ### Warm theme
-![warm](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/warm1.png)
-![warm](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/warm2.png)
+![warm1.png](https://i.postimg.cc/qq0PXmg7/warm1.png)
+![warm2.png](https://i.postimg.cc/025gzHLW/warm2.png)
 
 ### One-dark theme
-![onedark](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/onedark1.png)
-![onedark](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/onedark2.png)
+![onedark1.png](https://i.postimg.cc/3wvzMMvR/onedark1.png)
+![onedark2.png](https://i.postimg.cc/1XHLWpNr/onedark2.png)
 
 ### Gruv theme
-![gruv](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/gruv1.png)
-![gruv](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/gruv2.png)
+![gruv1.png](https://i.postimg.cc/FK3CWjMk/gruv1.png)
+![gruv2.png](https://i.postimg.cc/d19HvJtq/gruv2.png)
 
 ### Boxes theme
-![boxes](https://github.com/anhsirk0/awesome-config/blob/master/screenshots/boxes2.png)
+![boxes2.png](https://i.postimg.cc/sgFpntsK/boxes2.png)
 
 ## change-theme.pl
 use `scripts/change-theme.pl` to change the themes (fzf optionally required)
@@ -85,7 +85,7 @@ $ ~/.config/awesome/scripts/change-theme.pl gruv
 ## Some defaults info
 Default font - [Iosevka Comfy](https://gitlab.com/protesilaos/iosevka-comfy)  
 Newer themes are for resolution 1920x1080 while some are for 1366x768, change the font size, gaps etc etc accordingly  
-Same themes are also avalable for Alacritty, rofi and Kakoune in my [alacritty-themes](https://github.com/anhsirk0/alacritty-themes), [rofi-config](https://github.com/anhsirk0/rofi-config) and [kakoune-themes](https://github.com/anhsirk0/kakoune-themes) repo respectively  
+Same themes are also avalable for Alacritty, rofi and Kakoune in my [alacritty-themes](https://codeberg.org/anhsirk0/alacritty-themes), [rofi-config](https://codeberg.org/anhsirk0/rofi-config) and [kakoune-themes](https://codeberg.org/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
 
 ## Thanks

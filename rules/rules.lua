@@ -32,6 +32,7 @@ myrules = {
 	   "Kruler",
 	   "MessageWin", -- kalarm.
 	   -- "Sxiv",
+	   -- "feh",
 	   "Wpa_gui",
 	   "pinentry",
 	   "veromix",
@@ -64,14 +65,26 @@ myrules = {
      end
    },
 
-   -- Set Chromium to always map on the tag named "6" on screen 1.
-   { rule = { class = "Chromium" },
-     properties = { screen = 1, tag = "6" },
+   -- Set Quodlibet to always map on the tag named "3" on screen 1.
+   { rule = { class = "Quodlibet" },
+     properties = { screen = 1, tag = "3" },
+     callback = function ()
+        local screen = awful.screen.focused()
+        local tag = screen.tags[3]
+        if tag then
+	   tag:view_only()
+        end
+     end
    },
 
    -- Set Smplayer to always map on the tag named "3" on screen 1.
    { rule = { class = "smplayer" },
      properties = { screen = 1, tag = "3" },
+   },
+
+   -- Set Chromium to always map on the tag named "6" on screen 1.
+   { rule = { class = "Chromium" },
+     properties = { screen = 1, tag = "6" },
    },
 
    -- fix brave apps (lichess) floating mode
