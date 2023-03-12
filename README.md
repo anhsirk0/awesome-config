@@ -6,7 +6,7 @@ Old themes will no longer be maintained
 Very Minimal - no fancy effects, no fancy widgets, not even icons (all the themes follow same pattern)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
-Rofi Scripts moved to its own [repo](https://github.com/anhsirk0/rofi-config)  
+Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 
 ## Screenshots
 ### Ef-Cherie theme
@@ -85,7 +85,7 @@ $ ~/.config/awesome/scripts/change-theme.pl gruv
 ## Some defaults info
 Default font - [Iosevka Comfy](https://gitlab.com/protesilaos/iosevka-comfy)  
 Newer themes are for resolution 1920x1080 while some are for 1366x768, change the font size, gaps etc etc accordingly  
-Same themes are also avalable for Alacritty, rofi and Kakoune in my [alacritty-themes](https://github.com/anhsirk0/alacritty-themes), [rofi-config](https://github.com/anhsirk0/rofi-config) and [kakoune-themes](https://github.com/anhsirk0/kakoune-themes) repo respectively  
+Same themes are also avalable for Alacritty, rofi and Kakoune in my [alacritty-themes](https://codeberg.org/anhsirk0/alacritty-themes), [rofi-config](https://codeberg.org/anhsirk0/rofi-config) and [kakoune-themes](https://codeberg.org/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
 
 ## Thanks
