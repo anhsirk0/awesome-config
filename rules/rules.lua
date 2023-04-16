@@ -1,6 +1,9 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 
+-- Load these after beautiful init
+local tagnames = awful.util.tagnames
+
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 myrules = {
@@ -32,13 +35,12 @@ myrules = {
 	   "Kruler",
 	   "MessageWin", -- kalarm.
 	   -- "Sxiv",
-	   -- "feh",
+	   "feh",
 	   "Wpa_gui",
 	   "pinentry",
 	   "veromix",
 	   "xtightvncviewer"
 	},
-
 	name = {
 	   "Event Tester", -- xev.
 	},
@@ -53,9 +55,9 @@ myrules = {
      properties = { titlebars_enabled = true }
    },
 
-   -- Set Lollypop to always map on the tag named "3" on screen 1.
+   -- Set Lollypop to always map on the tag named tagnames[3] on screen 1.
    { rule = { class = "Lollypop" },
-     properties = { screen = 1, tag = "3" },
+     properties = { screen = 1, tag = tagnames[3] },
      callback = function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[3]
@@ -65,9 +67,9 @@ myrules = {
      end
    },
 
-   -- Set Quodlibet to always map on the tag named "3" on screen 1.
+   -- Set Quodlibet to always map on the tag named tagnames[3] on screen 1.
    { rule = { class = "Quodlibet" },
-     properties = { screen = 1, tag = "3" },
+     properties = { screen = 1, tag = tagnames[3] },
      callback = function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[3]
@@ -77,14 +79,14 @@ myrules = {
      end
    },
 
-   -- Set Smplayer to always map on the tag named "3" on screen 1.
+   -- Set Smplayer to always map on the tag named tagnames[3] on screen 1.
    { rule = { class = "smplayer" },
-     properties = { screen = 1, tag = "3" },
+     properties = { screen = 1, tag = tagnames[3] },
    },
 
-   -- Set Chromium to always map on the tag named "6" on screen 1.
+   -- Set Chromium to always map on the tag named tagnames[6] on screen 1.
    { rule = { class = "Chromium" },
-     properties = { screen = 1, tag = "6" },
+     properties = { screen = 1, tag = tagnames[6] },
    },
 
    -- fix brave apps (lichess) floating mode

@@ -11,7 +11,6 @@ local dpi       = require("beautiful.xresources").apply_dpi
 -- }}}
 
 globalkeys = require("keys.keys")
-awful.rules.rules = require("rules.rules")
 
 awful.util.terminal = terminal
 awful.layout.layouts = {
@@ -55,6 +54,10 @@ beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME")))
 -- -- Use this for old-themes
 -- local chosen_theme = "operandi"
 -- beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+-- }}}
+
+-- {{{ Set Rules
+awful.rules.rules = require("rules.rules")
 -- }}}
 
 -- {{{ Helper functions
@@ -112,7 +115,7 @@ client.connect_signal(
                awful.mouse.client.resize(c)
          end)
       )
-   end
+      end
 )
 
 -- Enable sloppy focus, so that focus follows mouse.
@@ -125,6 +128,28 @@ client.connect_signal(
       end
    end
 )
+
+-- local function manage_rounded_corner(c)
+--    local t = awful.screen.focused().selected_tag
+--    if #t:clients() == 1 then
+--       rounded_corner = 0
+--    else
+--       rounded_corner = beautiful.rounded_corner
+--    end
+--    c.shape = function(cr, w, h)
+--       gears.shape.rounded_rect(cr, w, h, rounded_corner)
+--    end
+-- end
+
+-- client.connect_signal(
+--    "manage",
+--    manage_rounded_corner
+-- )
+
+-- client.connect_signal(
+--    "unmanage",
+--    manage_rounded_corner
+-- )
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
