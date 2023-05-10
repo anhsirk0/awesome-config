@@ -1,14 +1,17 @@
 # my config for awesome window manager
 
 ## Features
-Themes are divided in 2 groups (`themes` and `old_themes`)  
-Old themes will no longer be maintained  
 Very Minimal - no fancy effects, no fancy widgets, not even icons (all the themes follow same pattern)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
+Themes are divided in 2 groups (`themes` and `old_themes`)  
+Old themes will no longer be maintained  
 
 ## Screenshots
+### Ef-Tritanopia-dark theme
+![ef-tritanopia-dark.png](https://i.postimg.cc/Kzz1Yf5p/ef-tritanopia-dark.png)
+
 ### Ef-Cherie theme
 ![ef-cherie.png](https://i.postimg.cc/1tR0GwsQ/ef-cherie.png)
 
