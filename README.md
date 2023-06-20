@@ -1,43 +1,32 @@
 # my config for awesome window manager
 
 ## Features
-Themes are divided in 2 groups (`themes` and `old_themes`)  
-Old themes will no longer be maintained  
 Very Minimal - no fancy effects, no fancy widgets, not even icons (all the themes follow same pattern)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
+Themes are divided in 2 groups (`themes` and `old_themes`)  
+Total 20 themes (12 themes) (8 old themes)  
+Old themes will no longer be maintained  
 
 ## Screenshots
-### Ef-Cherie theme
-![ef-cherie.png](https://i.postimg.cc/1tR0GwsQ/ef-cherie.png)
+### Modus-Operandi & Modus-Vivendi theme
+[![operandi-vivendi.png](https://i.postimg.cc/sD2PkW0F/operandi-vivendi.png)](https://postimg.cc/mh0FMPsV)
 
-### Ef-Spring theme
-![ef-spring.png](https://i.postimg.cc/ZqxFvVkH/ef-spring.png)
+### Ef-Summer & Ef-Winter theme
+[![summer-winter.png](https://i.postimg.cc/v8hL2hhL/summer-winter.png)](https://postimg.cc/qgt3z89z)
 
-### Ef-Summer theme
-![ef-summer.png](https://i.postimg.cc/QdWfCQxY/ef-summer.png)
+### Ef-Spring & Ef-Autumn theme
+[![spring-autumn.png](https://i.postimg.cc/QtrkwnvS/spring-autumn.png)](https://postimg.cc/gwNZ64z6)
 
-### Ef-Bio theme
-![ef-bio.png](https://i.postimg.cc/bJ6x3rw2/ef-bio.png)
+### Ef-Trio light & dark theme
+[![trio-light-dark.png](https://i.postimg.cc/1Xm05Vmq/trio-light-dark.png)](https://postimg.cc/1ndVvtNm)
 
-### Ef-Autumn theme
-![ef-autumn.png](https://i.postimg.cc/TwPmLxJ2/ef-autumn.png)
+### Ef-Tritanopia light & dark theme
+[![tritanopia-light-dark.png](https://i.postimg.cc/DZddTPTh/tritanopia-light-dark.png)](https://postimg.cc/MMHj0RH3)
 
-### Ef-Trio-Light theme
-![ef-trio-light.png](https://i.postimg.cc/TY17MM86/ef-trio-light.png)
-
-### Ef-Trio-Dark theme
-![ef-trio-dark.png](https://i.postimg.cc/PJ3SpKw9/ef-trio-dark.png)
-
-### Ef-Winter theme
-![ef-winter.png](https://i.postimg.cc/XNQHzNzL/ef-winter.png)
-
-### Operandi theme
-![operandi.png](https://i.postimg.cc/W1tQnqp0/operandi.png)
-
-### Vivendi theme
-![vivendi.png](https://i.postimg.cc/y852r6Wt/vivendi.png)
+### Ef-Bio & Ef-Cherie theme
+[![bio-cherie.png](https://i.postimg.cc/VN0D3tvs/bio-cherie.png)](https://postimg.cc/TyGVbpnB)
 
 ## Following themes are now part of `old_themes`
 ### Moonlight theme
