@@ -10,38 +10,23 @@ Total 20 themes (12 themes) (8 old themes)
 Old themes will no longer be maintained  
 
 ## Screenshots
-### Ef-Tritanopia-dark theme
-![ef-tritanopia-dark.png](https://i.postimg.cc/Kzz1Yf5p/ef-tritanopia-dark.png)
+### Modus-Operandi & Modus-Vivendi theme
+[![operandi-vivendi.png](https://i.postimg.cc/sD2PkW0F/operandi-vivendi.png)](https://postimg.cc/mh0FMPsV)
 
-### Ef-Cherie theme
-![ef-cherie.png](https://i.postimg.cc/1tR0GwsQ/ef-cherie.png)
+### Ef-Summer & Ef-Winter theme
+[![summer-winter.png](https://i.postimg.cc/v8hL2hhL/summer-winter.png)](https://postimg.cc/qgt3z89z)
 
-### Ef-Spring theme
-![ef-spring.png](https://i.postimg.cc/ZqxFvVkH/ef-spring.png)
+### Ef-Spring & Ef-Autumn theme
+[![spring-autumn.png](https://i.postimg.cc/QtrkwnvS/spring-autumn.png)](https://postimg.cc/gwNZ64z6)
 
-### Ef-Summer theme
-![ef-summer.png](https://i.postimg.cc/QdWfCQxY/ef-summer.png)
+### Ef-Trio light & dark theme
+[![trio-light-dark.png](https://i.postimg.cc/1Xm05Vmq/trio-light-dark.png)](https://postimg.cc/1ndVvtNm)
 
-### Ef-Bio theme
-![ef-bio.png](https://i.postimg.cc/bJ6x3rw2/ef-bio.png)
+### Ef-Tritanopia light & dark theme
+[![tritanopia-light-dark.png](https://i.postimg.cc/DZddTPTh/tritanopia-light-dark.png)](https://postimg.cc/MMHj0RH3)
 
-### Ef-Autumn theme
-![ef-autumn.png](https://i.postimg.cc/TwPmLxJ2/ef-autumn.png)
-
-### Ef-Trio-Light theme
-![ef-trio-light.png](https://i.postimg.cc/TY17MM86/ef-trio-light.png)
-
-### Ef-Trio-Dark theme
-![ef-trio-dark.png](https://i.postimg.cc/PJ3SpKw9/ef-trio-dark.png)
-
-### Ef-Winter theme
-![ef-winter.png](https://i.postimg.cc/XNQHzNzL/ef-winter.png)
-
-### Operandi theme
-![operandi.png](https://i.postimg.cc/W1tQnqp0/operandi.png)
-
-### Vivendi theme
-![vivendi.png](https://i.postimg.cc/y852r6Wt/vivendi.png)
+### Ef-Bio & Ef-Cherie theme
+[![bio-cherie.png](https://i.postimg.cc/VN0D3tvs/bio-cherie.png)](https://postimg.cc/TyGVbpnB)
 
 ## Following themes are now part of `old_themes`
 ### Moonlight theme
