@@ -1,15 +1,21 @@
 # my config for awesome window manager
 
++ Git repo on Codeberg: <https://codeberg.org/anhsirk0/awesome-config>
+  - Mirrors:
+    + GitHub: <https://github.com/anhsirk0/awesome-config>
+
 ## Features
 Very Minimal - no fancy effects, no fancy widgets, not even icons (all the themes follow same pattern)  
 Modular (mostly) - Different files for keybindings, rules, rc.lua  
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 Themes are divided in 2 groups (`themes` and `old_themes`)  
-Total 20 themes (12 themes) (8 old themes)  
+Total 34 themes (26 themes) (8 old themes)  
 Old themes will no longer be maintained  
 
 ## Screenshots
+Ef-themes pictures: https://protesilaos.com/emacs/ef-themes-pictures  
+
 ### Modus-Operandi & Modus-Vivendi theme
 [![operandi-vivendi.png](https://i.postimg.cc/sD2PkW0F/operandi-vivendi.png)](https://postimg.cc/mh0FMPsV)
 
