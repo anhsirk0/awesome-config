@@ -30,4 +30,4 @@ bash ~/.config/awesome/scripts/cursor_speed
 xrdb -merge ~/.Xresources
 run xss-lock -- betterlockscreen -l
 run emacs --daemon &
-notify-send "AwesomeWM Loaded"
+# notify-send "AwesomeWM Loaded"
