@@ -10,7 +10,7 @@ Modular (mostly) - Different files for keybindings, rules, rc.lua
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 Themes are divided in 2 groups (`themes` and `old_themes`)  
-Total 34 themes (26 themes) (8 old themes)  
+Total 40 themes (32 themes) (8 old themes)  
 Old themes will no longer be maintained  
 
 ## Screenshots
