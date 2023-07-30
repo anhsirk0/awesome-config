@@ -2,4 +2,4 @@
 
 id=$(xinput | awk -F '=' '/Touchpad/ { print int($2) }')
 
-xinput set-prop $id 'Coordinate Transformation Matrix' 2.2 0 0 0 2.2 0 0 0 1
+xinput set-prop $id 'Coordinate Transformation Matrix' 2.2 0 0 0 2.0 0 0 0 1
