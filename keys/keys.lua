@@ -7,7 +7,7 @@ local lain    = require("lain")
 local menubar = require("menubar")
 local spawn   = awful.spawn
 
--- local hotkeys_popup   = require("awful.hotkeys_popup")
+local hotkeys_popup   = require("awful.hotkeys_popup")
 local modkey             = "Mod4"
 
 -- swap alt and ctrl (for Emacs reasons)
@@ -24,7 +24,7 @@ local color_picker    = "gcolor3"
 
 -- local browser         = "firefox"
 -- local private_browser = browser .. " --private-window"
-local browser         = "brave"
+local browser         = "brave-browser"
 local private_browser = browser .. " --incognito"
 
 local rofi_dir        = home .. "/.config/rofi/"
@@ -66,8 +66,8 @@ my_dropdown = lain.util.quake({
 
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
-   -- awful.key({ modkey,             }, "/",        hotkeys_popup.show_help,
-   --             {description="show help", group="awesome"}),
+   awful.key({ modkey, "Shift" }, "/", hotkeys_popup.show_help,
+               {description="show help", group="awesome"}),
 
    awful.key({}, "F12", nil,
       function () my_dropdown:toggle() end),
@@ -185,23 +185,23 @@ local globalkeys = gears.table.join(
       function () awful.tag.incnmaster(-1, nil, true) end,
       {description = "dec the number of master clients", group = "layout"}),
 
-   awful.key({ modkey, ctrlkey }, "h",
+   awful.key({ modkey, ctrlkey }, "j",
       function () awful.tag.incncol( 1, nil, true) end,
       {description = "increase the number of columns", group = "layout"}),
 
-   awful.key({ modkey, ctrlkey }, "l",
+   awful.key({ modkey, ctrlkey }, "k",
       function () awful.tag.incncol(-1, nil, true) end,
       {description = "decrease the number of columns", group = "layout"}),
 
-   awful.key({ modkey, altkey }, "l",
+   awful.key({ modkey, ctrlkey }, "l",
       function () awful.tag.incmwfact( 0.01) end,
       {description = "increase master width factor 1", group = "layout"}),
 
-   awful.key({ modkey, altkey }, "h",
+   awful.key({ modkey, ctrlkey }, "h",
       function () awful.tag.incmwfact(-0.01) end,
       {description = "decrease master width factor 1", group = "layout"}),
 
-   awful.key({ modkey, "Shift" }, "space",
+   awful.key({ modkey, }, "space",
       function () awful.layout.inc(-1) end,
       {description = "select previous", group = "layout"}),
 
@@ -246,33 +246,51 @@ local globalkeys = gears.table.join(
       function () spawn("xdman") end,
       {description = "launch xdm", group = "launcher"}),
 
+   -- {{ Music
    awful.key({ modkey, }, "x",
-      function () spawn("quodlibet --play-pause --run") end,
-      {description = "toggle play / launch quodlibet", group = "quodlibet"}),
+      function () spawn("lollypop --play-pause") end,
+      {description = "toggle play / launch lollypop", group = "lollypop"}),
 
    awful.key({ modkey, }, ".",
-      function () spawn("quodlibet --next --run") end,
-      {description = "play next", group = "quodlibet"}),
+      function () spawn("lollypop --next") end,
+      {description = "play next", group = "lollypop"}),
 
    awful.key({ modkey, }, ",",
-      function () spawn("quodlibet --previous --run") end,
-      {description = "play previous", group = "quodlibet"}),
-
-   awful.key({ modkey, altkey }, ".",
-      function () spawn("quodlibet --seek=+00:10") end,
-      {description = "Seek 10 seconds", group = "quodlibet"}),
-
-   awful.key({ modkey, altkey }, ",",
-      function () spawn("quodlibet --seek=-00:10") end,
-      {description = "Seek -10 seconds", group = "quodlibet"}),
+      function () spawn("lollypop --prev") end,
+      {description = "play previous", group = "lollypop"}),
 
    awful.key({ modkey, }, "s",
-      function () spawn(rofi_dir .. "quodlibet/launcher.pl") end,
+      function () spawn(rofi_dir .. "lollypop/launcher.pl") end,
       {description = "Add song to playlist", group = "launcher"}),
+
+   -- awful.key({ modkey, }, "x",
+   --    function () spawn("quodlibet --play-pause --run") end,
+   --    {description = "toggle play / launch quodlibet", group = "quodlibet"}),
+
+   -- awful.key({ modkey, }, ".",
+   --    function () spawn("quodlibet --next --run") end,
+   --    {description = "play next", group = "quodlibet"}),
+
+   -- awful.key({ modkey, }, ",",
+   --    function () spawn("quodlibet --previous --run") end,
+   --    {description = "play previous", group = "quodlibet"}),
+
+   -- awful.key({ modkey, altkey }, ".",
+   --    function () spawn("quodlibet --seek=+00:10") end,
+   --    {description = "Seek 10 seconds", group = "quodlibet"}),
+
+   -- awful.key({ modkey, altkey }, ",",
+   --    function () spawn("quodlibet --seek=-00:10") end,
+   --    {description = "Seek -10 seconds", group = "quodlibet"}),
+
+   -- awful.key({ modkey, }, "s",
+   --    function () spawn(rofi_dir .. "quodlibet/launcher.pl") end,
+   --    {description = "Add song to playlist", group = "launcher"}),
+   -- }}
 
    awful.key({ modkey, }, "o",
       function () spawn(rofi_dir .. "other/launcher.sh") end,
-      {description = "search and add a song to playlist ", group = "lollypop"}),
+      {description = "Launch other rofi script", group = "launcher"}),
 
    awful.key({ modkey, }, "d",
       function () spawn(rofi_dir .. "applaunch/launcher.sh") end,
@@ -284,7 +302,7 @@ local globalkeys = gears.table.join(
 
    awful.key({ modkey, }, "v",
       function () spawn(rofi_dir .. "helper/volume_control.pl") end,
-      {description = "Control volume", group = "launcher"}),
+      {description = "Control volume", group = "volume"}),
 
    awful.key({ modkey, }, "/",
       function () spawn(rofi_dir .. "helper/wifi_launcher.sh") end,
@@ -320,7 +338,7 @@ local globalkeys = gears.table.join(
 
    awful.key({ modkey, altkey }, "[",
       function () spawn("killall blueberry") end,
-      {description = "kill Bluetooth applet", group = "launcher"}),
+      {description = "kill Bluetooth applet", group = "kill"}),
 
    awful.key({ }, "Print",
       function () spawn(scripts_dir .. "full-screenshot") end,
@@ -338,19 +356,19 @@ local globalkeys = gears.table.join(
       {description = "Get OCR text of selection to", group = "screenshot"}),
 
    -- modkey + altkey combination of screenshot related keybindings
-   awful.key({ modkey, altkey }, "f",
+   awful.key({ modkey, ctrlkey }, "f",
       function () spawn(scripts_dir .. "full-screenshot") end,
       {description = "capture a screenshot", group = "screenshot"}),
 
-   awful.key({ modkey, altkey }, "w",
+   awful.key({ modkey, ctrlkey }, "w",
       function () spawn(scripts_dir .. "window-screenshot") end,
       {description = "take screenshot of active window", group = "screenshot"}),
 
-   awful.key({ modkey, altkey }, "a",
+   awful.key({ modkey, ctrlkey }, "a",
       function () spawn(scripts_dir .. "area-screenshot") end,
       {description = "take screenshot of selection", group = "screenshot"}),
 
-   awful.key({ modkey, altkey }, "g",
+   awful.key({ modkey, ctrlkey }, "g",
       function () spawn(scripts_dir .. "ocr") end,
       {description = "Get OCR text of selection to", group = "screenshot"}),
 
@@ -368,7 +386,7 @@ local globalkeys = gears.table.join(
 
    awful.key({ modkey, "Shift" }, "c",
       function (c) spawn("xkill") end,
-      {description = "xkill", group = "launcher"}),
+      {description = "xkill", group = "kill"}),
 
    -- Finer control over brightness and volume via Ctrl-Alt keybindings
    -- Pressing Ctrl-Alt kebindings is kinda hassle,
@@ -376,71 +394,71 @@ local globalkeys = gears.table.join(
    -- via kmonad config, When you hold down capslock it act as holding Ctrl+Alt
    -- the following keybindings are now easily pressable
    -- Brightness min/max
-   awful.key({ altkey, ctrlkey }, "f",
+   awful.key({ modkey, altkey }, "f",
       function() spawn_and_notify("xbacklight -set 100", "Brightness 100") end,
       {description = "Set brightness to max", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "d",
+   awful.key({ modkey, altkey }, "d",
       function() spawn_and_notify("xbacklight -set 1", "Brightness 1") end,
       {description = "Set brightness to min", group = "brightness"}),
 
    -- Brightness 10%
-   awful.key({ altkey, ctrlkey }, "a",
+   awful.key({ modkey, altkey }, "a",
       function()
          spawn_and_notify("xbacklight -dec 10", "Brightness ", get_brightness)
       end,
       {description = "Decrease brightness 10%", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "s",
+   awful.key({ modkey, altkey }, "s",
       function()
          spawn_and_notify("xbacklight -inc 10", "Brightness ", get_brightness)
       end,
       {description = "Increase brightness 10%", group = "brightness"}),
 
    -- Brightness 5%
-   awful.key({ altkey, ctrlkey }, "g",
+   awful.key({ modkey, altkey }, "g",
       function()
          spawn_and_notify("xbacklight -dec 5", "Brightness ", get_brightness)
       end,
       {description = "Decrease brightness 5%", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "h",
+   awful.key({ modkey, altkey }, "h",
       function()
          spawn_and_notify("xbacklight -inc 5", "Brightness ", get_brightness)
       end,
       {description = "Increase brightness 5%", group = "brightness"}),
 
    -- Volume min/max
-   awful.key({ altkey, ctrlkey }, "v",
+   awful.key({ modkey, altkey }, "v",
       function() spawn_and_notify(volume .. " -set 100", "Volume 100") end,
       {description = "Set volume to max", group = "volume"}),
-   awful.key({ altkey, ctrlkey }, "c",
+   awful.key({ modkey, altkey }, "c",
       function() spawn_and_notify(volume .. " -mute", "Volume mute toggle") end,
       {description = "Toggles mute", group = "volume"}),
 
    -- Volume 10%
-   awful.key({ altkey, ctrlkey }, "z",
+   awful.key({ modkey, altkey }, "z",
       function()
          spawn_and_notify(volume .. " -dec 10", "Volume ", volume .. " -get")
       end,
       {description = "Decrease volume 10%", group = "volume"}),
-   awful.key({ altkey, ctrlkey }, "x",
+   awful.key({ modkey, altkey }, "x",
       function()
          spawn_and_notify(volume .. " -inc 10", "Volume ", volume .. " -get")
       end,
       {description = "Increase volume 10%", group = "volume"}),
 
    -- Volume 5%
-   awful.key({ altkey, ctrlkey }, "b",
+   awful.key({ modkey, altkey }, "b",
       function()
          spawn_and_notify(volume .. " -dec 5", "Volume ", volume .. " -get")
       end,
       {description = "Decrease volume 5%", group = "volume"}),
-   awful.key({ altkey, ctrlkey }, "n",
+   awful.key({ modkey, altkey }, "n",
       function()
          spawn_and_notify(volume .. " -inc 5", "Volume ", volume .. " -get")
       end,
       {description = "Increase volume 5%", group = "volume"}),
 
    -- Other shortcuts
-   awful.key({ altkey, ctrlkey }, "k",
+   awful.key({ modkey, altkey }, "k",
       function() spawn_and_notify("killall java", "Killed XDM") end,
       {description = "Kill XDM", group = "Kill"}),
    -- End Other shortcuts
@@ -457,7 +475,7 @@ local globalkeys = gears.table.join(
 
    -- my_shortcuts ends }}
 
-   awful.key({ modkey, ctrlkey }, "n",
+   awful.key({ modkey, altkey }, "n",
       function ()
          local c = awful.client.restore()
          -- Focus restored client
