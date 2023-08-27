@@ -321,7 +321,7 @@ local globalkeys = gears.table.join(
       function () spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
       {description = "Mute volume ", group = "launcher"}),
 
-   awful.key({ modkey, altkey }, "b",
+   awful.key({ modkey, ctrlkey }, "b",
       function () spawn(rofi_dir .. "/browser/browser_menu.pl") end,
       {description = "Browser menu ", group = "launcher"}),
 
