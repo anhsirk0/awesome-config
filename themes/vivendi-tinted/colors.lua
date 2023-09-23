@@ -1,4 +1,4 @@
--- Colors Modus-Vivendi-Tinted
+-- Colors Vivendi-Tinted
 
 local colors = {}
 colors.wallpaper     = "#1d2235"
@@ -22,7 +22,7 @@ colors.purple        = "#feacd0"
 colors.purple_bright = "#b6a0ff"
 colors.bg_accent_alt = "#484d67"
 colors.fg_accent_alt = "#ffffff"
-colors.bg_accent     = "#7030af"
+colors.bg_accent     = "#ffffff"
 colors.fg_accent     = "#ffffff"
 
 return colors

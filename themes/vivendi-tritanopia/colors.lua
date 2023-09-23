@@ -1,4 +1,4 @@
--- Colors Modus-Vivendi-Tritanopia
+-- Colors Vivendi-Tritanopia
 
 local colors = {}
 colors.wallpaper     = "#1e1e1e"
@@ -22,7 +22,7 @@ colors.purple        = "#feacd0"
 colors.purple_bright = "#b6a0ff"
 colors.bg_accent_alt = "#003c52"
 colors.fg_accent_alt = "#ffffff"
-colors.bg_accent     = "#7030af"
+colors.bg_accent     = "#ffffff"
 colors.fg_accent     = "#ffffff"
 
 return colors

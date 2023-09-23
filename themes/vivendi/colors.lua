@@ -1,38 +1,28 @@
+-- Colors Vivendi
 
--- ██╗   ██╗██╗██╗   ██╗███████╗███╗   ██╗██████╗ ██╗
--- ██║   ██║██║██║   ██║██╔════╝████╗  ██║██╔══██╗██║
--- ██║   ██║██║██║   ██║█████╗  ██╔██╗ ██║██║  ██║██║
--- ╚██╗ ██╔╝██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║  ██║██║
---  ╚████╔╝ ██║ ╚████╔╝ ███████╗██║ ╚████║██████╔╝██║
---   ╚═══╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚═╝
-
-local colors         = {}
-
+local colors = {}
 colors.wallpaper     = "#1e1e1e"
 colors.bg_main       = "#000000"
 colors.fg_main       = "#ffffff"
-colors.bg_dim        = "#100f10"
-colors.fg_dim        = "#e0e6f0"
-colors.bg_alt        = "#191a1b"
-colors.fg_alt        = "#a8a8a8"
-colors.bg_active     = "#323232"
-colors.fg_active     = "#f4f4f4"
-colors.bg_inactive   = "#1e1e1e"
-colors.fg_inactive   = "#bfc0c4"
+colors.bg_dim        = "#1e1e1e"
+colors.fg_dim        = "#989898"
+colors.bg_alt        = "#535353"
+colors.fg_alt        = "#c6daff"
+colors.bg_active     = "#535353"
+colors.bg_inactive   = "#303030"
 
-colors.red           = "#ff8059"
-colors.orange        = "#ef8b50"
+colors.red           = "#ff5f59"
 colors.green         = "#44bc44"
-colors.green_alt     = "#70b0ff"
+colors.green_bright  = "#00c06f"
 colors.yellow        = "#d0bc00"
+colors.yellow_bright = "#dfaf7a"
 colors.blue          = "#2fafff"
-colors.blue_alt      = "#79a8ff"
+colors.blue_bright   = "#00bcff"
 colors.purple        = "#feacd0"
-colors.purple_alt    = "#f78fe7"
-
-colors.bg_accent_alt = "#2a2a66"
-colors.fg_accent_alt = colors.fg_active
-colors.bg_accent     = colors.green_alt
-colors.fg_accent     = colors.fg_active
+colors.purple_bright = "#b6a0ff"
+colors.bg_accent_alt = "#505050"
+colors.fg_accent_alt = "#ffffff"
+colors.bg_accent     = "#ffffff"
+colors.fg_accent     = "#ffffff"
 
 return colors
