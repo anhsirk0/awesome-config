@@ -1,4 +1,4 @@
--- Colors Modus-Operandi-Tinted
+-- Colors Operandi-Tinted
 
 local colors = {}
 colors.wallpaper     = "#efe9dd"
@@ -22,7 +22,7 @@ colors.purple        = "#721045"
 colors.purple_bright = "#531ab6"
 colors.bg_accent_alt = "#cab9b2"
 colors.fg_accent_alt = "#000000"
-colors.bg_accent     = "#dfa0f0"
+colors.bg_accent     = "#000000"
 colors.fg_accent     = "#000000"
 
 return colors

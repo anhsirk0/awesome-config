@@ -1,4 +1,4 @@
--- Colors Modus-Operandi-Deuteranopia
+-- Colors Operandi-Deuteranopia
 
 local colors = {}
 colors.wallpaper     = "#f2f2f2"
@@ -22,7 +22,7 @@ colors.purple        = "#721045"
 colors.purple_bright = "#531ab6"
 colors.bg_accent_alt = "#d0d6ff"
 colors.fg_accent_alt = "#000000"
-colors.bg_accent     = "#dfa0f0"
+colors.bg_accent     = "#000000"
 colors.fg_accent     = "#000000"
 
 return colors

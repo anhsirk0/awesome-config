@@ -1,39 +1,28 @@
+-- Colors Operandi
 
---  ██████╗ ██████╗ ███████╗██████╗  █████╗ ███╗   ██╗██████╗ ██╗
--- ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗████╗  ██║██╔══██╗██║
--- ██║   ██║██████╔╝█████╗  ██████╔╝███████║██╔██╗ ██║██║  ██║██║
--- ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██║  ██║██║
--- ╚██████╔╝██║     ███████╗██║  ██║██║  ██║██║ ╚████║██████╔╝██║
---  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝
-
-local colors         = {}
-
-colors.wallpaper     = "#f0f0f0"
+local colors = {}
+colors.wallpaper     = "#f2f2f2"
 colors.bg_main       = "#ffffff"
 colors.fg_main       = "#000000"
-colors.bg_dim        = "#f8f8f8"
-colors.fg_dim        = "#282828"
-colors.bg_alt        = "#f0f0f0"
-colors.fg_alt        = "#505050"
-colors.bg_active     = "#d7d7d7"
-colors.fg_active     = "#0a0a0a"
-colors.bg_inactive   = "#efefef"
-colors.fg_inactive   = "#404148"
+colors.bg_dim        = "#f2f2f2"
+colors.fg_dim        = "#595959"
+colors.bg_alt        = "#c4c4c4"
+colors.fg_alt        = "#193668"
+colors.bg_active     = "#c4c4c4"
+colors.bg_inactive   = "#e0e0e0"
 
 colors.red           = "#a60000"
-colors.orange        = "#f2b0a2"
-colors.green         = "#005e00"
-colors.green_alt     = "#145c33"
-colors.yellow        = "#813e00"
+colors.green         = "#006800"
+colors.green_bright  = "#00663f"
+colors.yellow        = "#6f5500"
+colors.yellow_bright = "#7a4f2f"
 colors.blue          = "#0031a9"
-colors.blue_alt      = "#0000c0"
+colors.blue_bright   = "#0000b0"
 colors.purple        = "#721045"
-colors.purple_alt    = "#8f0075"
-
--- reversed accent_alt & accent_alt because theme is light
-colors.bg_accent_alt = "#d0d6ff"
-colors.fg_accent_alt = colors.fg_main
-colors.fg_accent     = colors.fg_active
-colors.bg_accent     = colors.blue
+colors.purple_bright = "#531ab6"
+colors.bg_accent_alt = "#c8c8c8"
+colors.fg_accent_alt = "#000000"
+colors.bg_accent     = "#000000"
+colors.fg_accent     = "#000000"
 
 return colors
