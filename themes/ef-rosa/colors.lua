@@ -12,7 +12,7 @@ colors.bg_active     = "#6a5862"
 colors.bg_inactive   = "#362129"
 
 colors.red           = "#ff707f"
-colors.green         = "#55cb56"
+colors.green         = "#5fbb5f"
 colors.green_bright  = "#49d081"
 colors.yellow        = "#e4c53f"
 colors.yellow_bright = "#eec26f"

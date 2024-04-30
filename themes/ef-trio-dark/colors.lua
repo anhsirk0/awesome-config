@@ -1,35 +1,28 @@
+-- Colors Ef-Trio-Dark
 
--- ████████╗██████╗ ██╗ ██████╗       ██████╗  █████╗ ██████╗ ██╗  ██╗
--- ╚══██╔══╝██╔══██╗██║██╔═══██╗      ██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝
---    ██║   ██████╔╝██║██║   ██║█████╗██║  ██║███████║██████╔╝█████╔╝ 
---    ██║   ██╔══██╗██║██║   ██║╚════╝██║  ██║██╔══██║██╔══██╗██╔═██╗ 
---    ██║   ██║  ██║██║╚██████╔╝      ██████╔╝██║  ██║██║  ██║██║  ██╗
---    ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝       ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
-
-local colors         = {}
-colors.wallpaper     = "#251a23"
+local colors = {}
+colors.wallpaper     = "#2a2228"
 colors.bg_main       = "#160f0f"
 colors.fg_main       = "#d8cfd5"
-colors.bg_dim        = "#251a23"
+colors.bg_dim        = "#2a2228"
 colors.fg_dim        = "#908890"
-colors.bg_alt        = "#33252d"
+colors.bg_alt        = "#362f35"
 colors.fg_alt        = "#afdacf"
-colors.bg_active     = "#43353d"
-colors.bg_inactive   = "#1c1416"
+colors.bg_active     = "#564f55"
+colors.bg_inactive   = "#1c1719"
 
 colors.red           = "#f48359"
-colors.orange        = "#e47f72"
 colors.green         = "#60b444"
-colors.green_alt     = "#60bf88"
+colors.green_bright  = "#60bf88"
 colors.yellow        = "#d4a052"
-colors.yellow_alt    = "#ef9680"
+colors.yellow_bright = "#ef9680"
 colors.blue          = "#7fa5f6"
-colors.blue_alt      = "#72afff"
+colors.blue_bright   = "#72afff"
 colors.purple        = "#d37faf"
-colors.purple_alt    = "#a698ef"
+colors.purple_bright = "#a698ef"
 colors.bg_accent_alt = "#6a294f"
 colors.fg_accent_alt = "#ffdfdf"
-colors.bg_accent     = "#cc88ff"
-colors.fg_accent     = "#000000"
+colors.bg_accent     = "#ff99ff"
+colors.fg_accent     = "#d8cfd5"
 
 return colors
