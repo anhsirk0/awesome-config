@@ -2,7 +2,6 @@
 local gears   = require("gears")
 local awful   = require("awful")
 local naughty = require("naughty")
-local lain    = require("lain")
 
 local menubar = require("menubar")
 local spawn   = awful.spawn
@@ -18,14 +17,13 @@ local home            = os.getenv("HOME")
 local terminal        = "alacritty"
 -- local terminal        = "wezterm"
 local editor          = "micro"
-local gui_editor      = "mousepad"
 local file_manager    = "nemo"
 local color_picker    = "gcolor3"
 
--- local browser         = "firefox"
--- local private_browser = browser .. " --private-window"
-local browser         = "brave"
-local private_browser = browser .. " --incognito"
+local browser         = "firefox-developer-edition"
+local private_browser = browser .. " --private-window"
+-- local browser         = "brave-browser"
+-- local private_browser = browser .. " --incognito"
 
 local rofi_dir        = home .. "/.config/rofi/"
 local scripts_dir     = home .. "/.config/myshell/scripts/"
@@ -36,6 +34,19 @@ local volume         = scripts_dir .. "/volume" -- codeberg.org/anhsirk0/volume
 
 menubar.show_categories = false
 
+local function keychord(chords)
+    local g = awful.keygrabber {
+        stop_key = "Escape",
+        keypressed_callback = function(self, _, key)
+            if chords[key] then
+                chords[key]()
+            end
+            self:stop()
+        end,
+    }
+    return function() g:start() end
+end
+
 function spawn_and_notify(command, message, message_cmd)
    spawn(command)
    if not message_cmd then
@@ -45,24 +56,16 @@ function spawn_and_notify(command, message, message_cmd)
 
    -- `volume -get` is slightly faster than `volume -set`
    os.execute("sleep 0.1")
-   spawn.easy_async(message_cmd,
-                    function(stdout, stderr, reason, exit_code)
-                       naughty.destroy_all_notifications()
-                       naughty.notify {
-                          text = message .. string.gsub(stdout, "\n", "")
-                       }
-                    end
+   spawn.easy_async(
+      message_cmd,
+      function(stdout, stderr, reason, exit_code)
+         naughty.destroy_all_notifications()
+         naughty.notify {
+            text = message .. string.gsub(stdout, "\n", "")
+         }
+      end
    )
 end
-
-my_dropdown = lain.util.quake({
-      app = "alacritty",
-      argname = '--class %s',
-      name = 'dropdown_terminal',
-      height = 0.5,
-      followtag = true,
-      visible = false
-})
 
 -- {{{ Key bindings
 local globalkeys = gears.table.join(
@@ -157,7 +160,7 @@ local globalkeys = gears.table.join(
       function () spawn(terminal) end,
       {description = "open a terminal", group = "launcher"}),
 
-   awful.key({ modkey, }, "z",
+   awful.key({ modkey, }, "g",
       awful.tag.history.restore,
       {description = "View previous tag", group = "tag"}),
 
@@ -218,7 +221,7 @@ local globalkeys = gears.table.join(
       function () spawn(file_manager) end,
       {description = "launch filemanager", group = "launcher"}),
 
-   awful.key({ modkey, }, "q",
+   awful.key({ modkey, }, "'",
       function () spawn(terminal) end,
       {description = "open a terminal", group = "launcher"}),
 
@@ -288,9 +291,9 @@ local globalkeys = gears.table.join(
    --    {description = "Add song to playlist", group = "launcher"}),
    -- }}
 
-   awful.key({ modkey, }, "o",
-      function () spawn(rofi_dir .. "other/launcher.sh") end,
-      {description = "Launch other rofi script", group = "launcher"}),
+   -- awful.key({ modkey, }, "o",
+   --    function () spawn(rofi_dir .. "other/launcher.sh") end,
+   --    {description = "Launch other rofi script", group = "launcher"}),
 
    awful.key({ modkey, }, "d",
       function () spawn(rofi_dir .. "applaunch/launcher.sh") end,
@@ -313,6 +316,10 @@ local globalkeys = gears.table.join(
       -- function () spawn(rofi_dir .. "emoji/emoji.pl") end,
       {description = "Emoji rofi launcher", group = "launcher"}),
 
+   awful.key({ modkey, altkey }, "k",
+      function () spawn("rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'") end,
+      {description = "Emoji rofi launcher", group = "launcher"}),
+
    awful.key({ modkey, altkey }, "p",
       function () spawn("rofi -show calc -modi calc -no-sort") end,
       {description = "Rofi calc mode", group = "launcher"}),
@@ -325,7 +332,7 @@ local globalkeys = gears.table.join(
       function () spawn(rofi_dir .. "/browser/browser_menu.pl") end,
       {description = "Browser menu ", group = "launcher"}),
 
-   awful.key({ modkey, }, "'",
+   awful.key({ modkey, }, "q",
       function () spawn(color_picker) end,
       {description = "Launch Color Picker", group = "launcher"}),
 
@@ -335,6 +342,10 @@ local globalkeys = gears.table.join(
    awful.key({ modkey, }, "[",
       function () spawn("blueberry") end,
       {description = "Launch Bluetooth manager", group = "launcher"}),
+
+   awful.key({ modkey, }, "]",
+      function () spawn("/mnt/projects/Git/extra/boomer/boomer") end,
+      {description = "Launch Boomer", group = "launcher"}),
 
    awful.key({ modkey, altkey }, "[",
       function () spawn("killall blueberry") end,
@@ -394,47 +405,47 @@ local globalkeys = gears.table.join(
    -- via kmonad config, When you hold down capslock it act as holding Ctrl+Alt
    -- the following keybindings are now easily pressable
    -- Brightness min/max
-   awful.key({ altkey, ctrlkey }, "f",
+   awful.key({ altkey, ctrlkey }, "a",
       function() spawn_and_notify("xbacklight -set 100", "Brightness 100") end,
       {description = "Set brightness to max", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "d",
+   awful.key({ altkey, ctrlkey }, "e",
       function() spawn_and_notify("xbacklight -set 1", "Brightness 1") end,
       {description = "Set brightness to min", group = "brightness"}),
 
    -- Brightness 10%
-   awful.key({ altkey, ctrlkey }, "a",
+   awful.key({ altkey, ctrlkey }, "c",
       function()
          spawn_and_notify("xbacklight -dec 10", "Brightness ", get_brightness)
       end,
       {description = "Decrease brightness 10%", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "s",
+   awful.key({ altkey, ctrlkey }, "i",
       function()
          spawn_and_notify("xbacklight -inc 10", "Brightness ", get_brightness)
       end,
       {description = "Increase brightness 10%", group = "brightness"}),
 
    -- Brightness 5%
-   awful.key({ altkey, ctrlkey }, "g",
+   awful.key({ altkey, ctrlkey }, ",",
       function()
          spawn_and_notify("xbacklight -dec 5", "Brightness ", get_brightness)
       end,
       {description = "Decrease brightness 5%", group = "brightness"}),
-   awful.key({ altkey, ctrlkey }, "h",
+   awful.key({ altkey, ctrlkey }, ".",
       function()
          spawn_and_notify("xbacklight -inc 5", "Brightness ", get_brightness)
       end,
       {description = "Increase brightness 5%", group = "brightness"}),
 
    -- Volume min/max
-   awful.key({ altkey, ctrlkey }, "v",
+   awful.key({ altkey, ctrlkey }, "k",
       function() spawn_and_notify(volume .. " -set 100", "Volume 100") end,
       {description = "Set volume to max", group = "volume"}),
-   awful.key({ altkey, ctrlkey }, "c",
+   awful.key({ altkey, ctrlkey }, "j",
       function() spawn_and_notify(volume .. " -mute", "Volume mute toggle") end,
       {description = "Toggles mute", group = "volume"}),
 
    -- Volume 10%
-   awful.key({ altkey, ctrlkey }, "z",
+   awful.key({ altkey, ctrlkey }, "g",
       function()
          spawn_and_notify(volume .. " -dec 10", "Volume ", volume .. " -get")
       end,
@@ -446,26 +457,34 @@ local globalkeys = gears.table.join(
       {description = "Increase volume 10%", group = "volume"}),
 
    -- Volume 5%
-   awful.key({ altkey, ctrlkey }, "b",
+   awful.key({ altkey, ctrlkey }, "-",
       function()
          spawn_and_notify(volume .. " -dec 5", "Volume ", volume .. " -get")
       end,
       {description = "Decrease volume 5%", group = "volume"}),
-   awful.key({ altkey, ctrlkey }, "n",
+   awful.key({ altkey, ctrlkey }, "/",
       function()
          spawn_and_notify(volume .. " -inc 5", "Volume ", volume .. " -get")
       end,
       {description = "Increase volume 5%", group = "volume"}),
 
    -- Other shortcuts
-   awful.key({ altkey, ctrlkey }, "k",
+   awful.key({ altkey, ctrlkey }, "t",
       function() spawn_and_notify("killall java", "Killed XDM") end,
       {description = "Kill XDM", group = "Kill"}),
-   -- End Other shortcuts
-   -- End finer controls
 
-   -- Show/Hide Wibox
-   awful.key({ modkey }, "g", function ()
+   awful.key({ altkey, ctrlkey }, "s",
+      function() spawn_and_notify("killall Discord", "Killed Discord") end,
+      {description = "Kill Discord", group = "Kill"}),
+
+   awful.key({ altkey, ctrlkey }, "'",
+      function() spawn("firefox /mnt/projects/Git/undoo-startpage/src/index.html") end,
+      {description = "Homepage", group = "launcher"}),
+      -- End Other shortcuts
+      -- End finer controls
+
+      -- Show/Hide Wibox
+      awful.key({ modkey }, "z", function ()
          for s in screen do
             -- set the name in the bar.lua
             s.mywibar.visible = not s.mywibar.visible
@@ -543,7 +562,14 @@ clientkeys = gears.table.join(
          c.maximized_horizontal = not c.maximized_horizontal
          c:raise()
       end,
-      {description = "(un)maximize horizontally", group = "client"})
+      {description = "(un)maximize horizontally", group = "client"}),
+
+   awful.key({ modkey }, "o", keychord {
+         a = function() awful.spawn(terminal) end,
+         b = function() awful.spawn(scripts_dir .. "bt-keychron-kmonad") end,
+         k = function() awful.spawn(scripts_dir .. "keychron-kmonad") end,
+         x = function() awful.spawn(scripts_dir .. "xrandr-toggle") end,
+    })
 )
 
 clientbuttons = gears.table.join(

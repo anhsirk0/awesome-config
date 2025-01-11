@@ -5,7 +5,7 @@ local gears     = require("gears")
 local awful     = require("awful")
 local beautiful = require("beautiful")
 local naughty   = require("naughty")
-local lain      = require("lain")
+-- local lain      = require("lain")
 local dpi       = require("beautiful.xresources").apply_dpi
                   require("awful.autofocus")
 -- }}}
@@ -14,10 +14,11 @@ globalkeys = require("keys.keys")
 
 awful.util.terminal = terminal
 awful.layout.layouts = {
-   -- awful.layout.suit.floating,
    -- awful.layout.suit.spiral.dwindle,
+   -- lain.layout.centerwork,
    awful.layout.suit.tile,
    awful.layout.suit.tile.bottom,
+   -- awful.layout.suit.floating,
    -- awful.layout.suit.tile.left,
    -- awful.layout.suit.spiral,
    -- awful.layout.suit.tile.top,
@@ -32,21 +33,21 @@ awful.layout.layouts = {
    --awful.layout.suit.corner.se,
    -- lain.layout.cascade,
    -- lain.layout.cascade.tile,
-   -- lain.layout.centerwork,
    -- lain.layout.centerwork.horizontal,
    --lain.layout.termfair,
    --lain.layout.termfair.center,
 }
 
-lain.layout.termfair.nmaster           = 3
-lain.layout.termfair.ncol              = 1
-lain.layout.termfair.center.nmaster    = 3
-lain.layout.termfair.center.ncol       = 1
-lain.layout.cascade.tile.offset_x      = dpi(2)
-lain.layout.cascade.tile.offset_y      = dpi(32)
-lain.layout.cascade.tile.extra_padding = dpi(5)
-lain.layout.cascade.tile.nmaster       = 5
-lain.layout.cascade.tile.ncol          = 2
+-- lain.layout.termfair.nmaster           = 3
+-- lain.layout.termfair.ncol              = 1
+-- lain.layout.termfair.center.nmaster    = 3
+-- lain.layout.termfair.center.ncol       = 1
+-- lain.layout.cascade.tile.offset_x      = dpi(2)
+-- lain.layout.cascade.tile.offset_y      = dpi(32)
+-- lain.layout.cascade.tile.extra_padding = dpi(5)
+-- lain.layout.cascade.tile.nmaster       = 5
+-- lain.layout.cascade.tile.ncol          = 2
+-- lain.layout.centerwork.master_width_factor          = 0.2
 
 -- for new themes
 beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME")))
@@ -99,24 +100,16 @@ client.connect_signal(
 )
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal(
-   "request::titlebars",
-   function(c)
-      -- buttons for the titlebar
-      local buttons = gears.table.join(
-         awful.button({ }, 1, function()
-               client.focus = c
-               c:raise()
-               awful.mouse.client.move(c)
-         end),
-         awful.button({ }, 3, function()
-               client.focus = c
-               c:raise()
-               awful.mouse.client.resize(c)
-         end)
-      )
-      end
-)
+-- client.connect_signal(
+--    "request::titlebars",
+--    function(c)
+--       local top_titlebar = awful.titlebar(c, {
+--         size      = 8,
+--         bg_normal = beautiful.border_normal,
+--         bg_focus = beautiful.border_focus,
+--       })
+--    end
+-- )
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal(
@@ -129,30 +122,12 @@ client.connect_signal(
    end
 )
 
--- local function manage_rounded_corner(c)
---    local t = awful.screen.focused().selected_tag
---    if #t:clients() == 1 then
---       rounded_corner = 0
---    else
---       rounded_corner = beautiful.rounded_corner
---    end
---    c.shape = function(cr, w, h)
---       gears.shape.rounded_rect(cr, w, h, rounded_corner)
---    end
--- end
-
--- client.connect_signal(
---    "manage",
---    manage_rounded_corner
--- )
-
--- client.connect_signal(
---    "unmanage",
---    manage_rounded_corner
--- )
+-- client.connect_signal("focus", function(c) awful.titlebar.show(c) end)
+-- client.connect_signal("unfocus", function(c) awful.titlebar.hide(c) end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
 
 -- Disable borders on lone windows
 -- Handle border sizes of clients.
@@ -193,14 +168,6 @@ end
 
 beautiful.gap_single_client = false
 -- }}}
-
---client.connect_signal("property::floating", function (c)
---    if c.floating then
---        awful.titlebar.show(c)
---    else
---        awful.titlebar.hide(c)
---    end
---end)
 
 awful.spawn(os.getenv("HOME") .. "/.config/awesome/scripts/autorun.sh")
 
