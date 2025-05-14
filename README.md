@@ -10,11 +10,12 @@ Modular (mostly) - Different files for keybindings, rules, rc.lua
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 Themes are divided in 2 groups (`themes` and `old_themes`)  
-Total 42 themes (8 modus themes) (36 modus themes) (8 old themes)  
+Total 48 themes (8 modus-themes) (36 ef-themes) (6 doric-themes) (8 old themes)  
 Old themes will no longer be maintained  
 
 ## Screenshots
 Ef-themes pictures: https://protesilaos.com/emacs/ef-themes-pictures  
+Doric-themes pictures: https://protesilaos.com/emacs/doric-themes-pictures  
 
 ### Modus-Operandi & Modus-Vivendi theme
 [![operandi-vivendi.png](https://i.postimg.cc/sD2PkW0F/operandi-vivendi.png)](https://postimg.cc/mh0FMPsV)
@@ -86,3 +87,4 @@ modified from awesome-copycats
 ## Thanks
 Modus themes - https://protesilaos.com/emacs/modus-themes-colors  
 Ef themes - https://protesilaos.com/emacs/ef-themes  
+Doric themes - https://protesilaos.com/emacs/doric-themes  
