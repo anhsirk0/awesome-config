@@ -6,8 +6,6 @@ colors.bg_main       = "#000000"
 colors.fg_main       = "#d0d0d0"
 colors.bg_dim        = "#1a1a1a"
 colors.fg_dim        = "#857f8f"
-colors.bg_alt        = "#2b2b2b"
-colors.fg_alt        = "#89afef"
 colors.bg_active     = "#4b4b4b"
 colors.bg_inactive   = "#121212"
 
