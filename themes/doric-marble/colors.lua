@@ -1,13 +1,13 @@
 -- Colors Doric-Marble
 
 local colors = {}
-colors.wallpaper     = "#dedede"
+colors.wallpaper     = "#dfdfdf"
 colors.bg_main       = "#ededed"
 colors.fg_main       = "#202020"
-colors.bg_dim        = "#dedede"
+colors.bg_dim        = "#dfdfdf"
 colors.fg_dim        = "#202020"
-colors.bg_active     = "#dedede"
-colors.bg_inactive   = "#dedede"
+colors.bg_active     = "#dfdfdf"
+colors.bg_inactive   = "#dfdfdf"
 
 colors.red           = "#750000"
 colors.green         = "#056100"

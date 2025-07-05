@@ -1,13 +1,13 @@
 -- Colors Doric-Dark
 
 local colors = {}
-colors.wallpaper     = "#363041"
+colors.wallpaper     = "#332d38"
 colors.bg_main       = "#000000"
 colors.fg_main       = "#ffffff"
-colors.bg_dim        = "#363041"
+colors.bg_dim        = "#332d38"
 colors.fg_dim        = "#ffffff"
-colors.bg_active     = "#363041"
-colors.bg_inactive   = "#363041"
+colors.bg_active     = "#332d38"
+colors.bg_inactive   = "#332d38"
 
 colors.red           = "#dba2a2"
 colors.green         = "#85c397"

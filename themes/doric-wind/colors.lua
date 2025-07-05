@@ -1,13 +1,13 @@
 -- Colors Doric-Wind
 
 local colors = {}
-colors.wallpaper     = "#d3dbd9"
+colors.wallpaper     = "#d5e1d9"
 colors.bg_main       = "#e8f0e9"
 colors.fg_main       = "#000f0f"
-colors.bg_dim        = "#d3dbd9"
+colors.bg_dim        = "#d5e1d9"
 colors.fg_dim        = "#000f0f"
-colors.bg_active     = "#d3dbd9"
-colors.bg_inactive   = "#d3dbd9"
+colors.bg_active     = "#d5e1d9"
+colors.bg_inactive   = "#d5e1d9"
 
 colors.red           = "#750000"
 colors.green         = "#006500"
