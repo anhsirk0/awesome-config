@@ -10,12 +10,14 @@ Modular (mostly) - Different files for keybindings, rules, rc.lua
 Rofi Scripts for some Useful tasks - control Volume, Brightness, Wifi, Emoji, BrowserMenu, Lollypop music  
 Rofi Scripts moved to its own [repo](https://codeberg.org/anhsirk0/rofi-config)  
 Themes are divided in 2 groups (`themes` and `old_themes`)  
-Total 58 themes (8 modus-themes) (36 ef-themes) (8 doric-themes) (8 old themes)  
+Total 60 themes (8 modus-themes) (36 ef-themes) (10 doric-themes) (8 old themes)  
 Old themes will no longer be maintained  
 
 ## Screenshots
-Ef-themes pictures: https://protesilaos.com/emacs/ef-themes-pictures  
-Doric-themes pictures: https://protesilaos.com/emacs/doric-themes-pictures  
+Pictures (wezterm): https://wezfurlong.org/wezterm/colorschemes/e/index.html#ef-autumn  
+Modus-themes pictures (emacs): https://protesilaos.com/emacs/modus-themes-pictures  
+Ef-themes pictures (emacs): https://protesilaos.com/emacs/ef-themes-pictures  
+Doric-themes pictures (emacs): https://protesilaos.com/emacs/doric-themes-pictures  
 
 ### Modus-Operandi & Modus-Vivendi theme
 [![operandi-vivendi.png](https://i.postimg.cc/sD2PkW0F/operandi-vivendi.png)](https://postimg.cc/mh0FMPsV)
@@ -79,12 +81,20 @@ $ ~/.config/awesome/scripts/change-theme.pl gruv
 > This will change theme to the first theme that has gruv in its name, like gruvbox
 
 ## Some defaults info
-Default font - [Iosevka Comfy](https://gitlab.com/protesilaos/iosevka-comfy)  
+Default font - [Aporetic](https://github.com/protesilaos/aporetic)  
 Newer themes are for resolution 1920x1080 while some are for 1366x768, change the font size, gaps etc etc accordingly  
-Same themes are also avalable for Alacritty, rofi and Kakoune in my [alacritty-themes](https://codeberg.org/anhsirk0/alacritty-themes), [rofi-config](https://codeberg.org/anhsirk0/rofi-config) and [kakoune-themes](https://codeberg.org/anhsirk0/kakoune-themes) repo respectively  
 modified from awesome-copycats
 
 ## Thanks
-Modus themes - https://protesilaos.com/emacs/modus-themes-colors  
+Modus themes - https://protesilaos.com/emacs/modus-themes  
 Ef themes - https://protesilaos.com/emacs/ef-themes  
-Doric themes - https://protesilaos.com/emacs/doric-themes  
+Doric themes - https://github.com/protesilaos/doric-themes  
+
+## See also
+Modus, Ef, Doric themes for Alacritty: https://github.com/anhsirk0/alacritty-themes  
+Modus, Ef, Doric themes for Wezterm: https://github.com/anhsirk0/wezterm-themes  
+Modus, Ef, Doric themes for Ghostty: https://github.com/anhsirk0/ghostty-themes  
+Modus, Ef, Doric themes for Awesomewm: https://github.com/anhsirk0/awesome-config  
+Modus, Ef, Doric themes for Rofi: https://github.com/anhsirk0/rofi-config  
+Modus, Ef, Doric themes for Xresources: https://github.com/anhsirk0/xresources-themes  
+Modus, Ef themes for Kakoune: https://github.com/anhsirk0/kakoune-themes  
