@@ -44,6 +44,7 @@ myrules = {
 				"veromix",
 				"xdman-Main",
 				"xtightvncviewer",
+				"org.gnome.FileRoller",
 			},
 			name = {
 				"Event Tester", -- xev.
@@ -72,24 +73,23 @@ myrules = {
 		end,
 	},
 
-	-- Set Quodlibet to always map on the tag named tagnames[3] on screen 1.
-	{
-		rule = { class = "Quodlibet" },
-		properties = { screen = 1, tag = tagnames[3] },
-		callback = function()
-			local screen = awful.screen.focused()
-			local tag = screen.tags[3]
-			if tag then
-				tag:view_only()
-			end
-		end,
-	},
-
 	-- Set Smplayer to always map on the tag named tagnames[3] on screen 1.
 	{ rule = { class = "smplayer" }, properties = { screen = 1, tag = tagnames[3] } },
 
 	-- Set Chromium to always map on the tag named tagnames[6] on screen 1.
 	{ rule = { class = "Chromium" }, properties = { screen = 1, tag = tagnames[6] } },
+
+	{
+		rule = { class = "float_on_top_in_corner" },
+		properties = {
+			ontop = true,
+			floating = true,
+			width = 620,
+			height = 120,
+			x = 1313,
+			y = 2,
+		},
+	},
 }
 
 return myrules
