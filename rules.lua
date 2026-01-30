@@ -42,7 +42,6 @@ myrules = {
 				"Wpa_gui",
 				"pinentry",
 				"veromix",
-				"xdman-Main",
 				"xtightvncviewer",
 				"org.gnome.FileRoller",
 			},
@@ -75,9 +74,6 @@ myrules = {
 
 	-- Set Smplayer to always map on the tag named tagnames[3] on screen 1.
 	{ rule = { class = "smplayer" }, properties = { screen = 1, tag = tagnames[3] } },
-
-	-- Set Chromium to always map on the tag named tagnames[6] on screen 1.
-	{ rule = { class = "Chromium" }, properties = { screen = 1, tag = tagnames[6] } },
 
 	{
 		rule = { class = "float_on_top_in_corner" },

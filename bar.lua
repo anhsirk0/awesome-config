@@ -6,7 +6,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 local markup = lain.util.markup
 
 local bar = function(s, theme)
-	local barheight = dpi(22)
+	local barheight = dpi(26)
 	local separator = wibox.container.margin(
 		wibox.widget({
 			markup = "|",
@@ -71,18 +71,18 @@ local bar = function(s, theme)
 		end)
 	))
 
-	local xdm = awful.widget.watch("/home/krishna/.config/myshell/scripts/get-xdm-count", 1, function(widget, stdout)
-		local font_color = theme.fg_main
-		local downloads = awful.util.escape(stdout)
-		local info = string.len(downloads) > 0 and " X " .. downloads or ""
-		widget:set_markup(markup.font(theme.font, markup(font_color, info)))
-	end)
-	xdm:buttons(gears.table.join(
-		xdm:buttons(),
-		awful.button({}, 1, nil, function()
-			awful.spawn("/mnt/projects/suckless/dmenu/scripts/xdm.pl")
-		end)
-	))
+	-- local xdm = awful.widget.watch("/home/krishna/.config/myshell/scripts/get-xdm-count", 1, function(widget, stdout)
+	-- 	local font_color = theme.fg_main
+	-- 	local downloads = awful.util.escape(stdout)
+	-- 	local info = string.len(downloads) > 0 and " X " .. downloads or ""
+	-- 	widget:set_markup(markup.font(theme.font, markup(font_color, info)))
+	-- end)
+	-- xdm:buttons(gears.table.join(
+	-- 	xdm:buttons(),
+	-- 	awful.button({}, 1, nil, function()
+	-- 		awful.spawn("/mnt/projects/suckless/dmenu/scripts/xdm.pl")
+	-- 	end)
+	-- ))
 
 	local taglist_buttons = gears.table.join(
 		awful.button({}, 1, function(t)
@@ -130,7 +130,7 @@ local bar = function(s, theme)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
-			xdm,
+			-- xdm,
 			separator,
 			volume,
 			separator,
