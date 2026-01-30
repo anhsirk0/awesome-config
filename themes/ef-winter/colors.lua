@@ -19,7 +19,7 @@ colors.blue_bright   = "#029fff"
 colors.purple        = "#d369af"
 colors.purple_bright = "#af85ea"
 colors.bg_accent_alt = "#5f1f5f"
-colors.fg_accent_alt = "#dedeff"
+colors.fg_accent_alt = "#b8c6d5"
 colors.bg_accent     = "#ff6ff0"
 colors.fg_accent     = "#b8c6d5"
 
